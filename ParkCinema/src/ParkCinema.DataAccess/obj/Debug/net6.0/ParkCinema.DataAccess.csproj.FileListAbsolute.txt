@@ -1,0 +1,14 @@
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\bin\Debug\net6.0\ParkCinema.DataAccess.deps.json
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\bin\Debug\net6.0\ParkCinema.DataAccess.runtimeconfig.json
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\bin\Debug\net6.0\ParkCinema.DataAccess.dll
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\bin\Debug\net6.0\ParkCinema.DataAccess.pdb
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\ParkCinema.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\ParkCinema.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\ParkCinema.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\ParkCinema.DataAccess.AssemblyInfo.cs
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\ParkCinema.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\ParkCinema.DataAccess.dll
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\refint\ParkCinema.DataAccess.dll
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\ParkCinema.DataAccess.pdb
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\ParkCinema.DataAccess.genruntimeconfig.cache
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.DataAccess\obj\Debug\net6.0\ref\ParkCinema.DataAccess.dll

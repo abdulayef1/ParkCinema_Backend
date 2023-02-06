@@ -1,0 +1,12 @@
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\bin\Debug\net6.0\ParkCinema.Core.deps.json
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\bin\Debug\net6.0\ParkCinema.Core.dll
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\bin\Debug\net6.0\ParkCinema.Core.pdb
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\obj\Debug\net6.0\ParkCinema.Core.csproj.AssemblyReference.cache
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\obj\Debug\net6.0\ParkCinema.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\obj\Debug\net6.0\ParkCinema.Core.AssemblyInfoInputs.cache
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\obj\Debug\net6.0\ParkCinema.Core.AssemblyInfo.cs
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\obj\Debug\net6.0\ParkCinema.Core.csproj.CoreCompileInputs.cache
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\obj\Debug\net6.0\ParkCinema.Core.dll
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\obj\Debug\net6.0\refint\ParkCinema.Core.dll
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\obj\Debug\net6.0\ParkCinema.Core.pdb
+C:\Users\Мухаммед\Desktop\WORKSPACE\FinalProject\ParkCinema\src\ParkCinema.Core\obj\Debug\net6.0\ref\ParkCinema.Core.dll
