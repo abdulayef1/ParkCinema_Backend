@@ -1,3 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using ParkCinema.Business.Services.Implementations;
+using ParkCinema.Business.Services.Interfaces;
+using ParkCinema.DataAccess.Contexts;
+using ParkCinema.DataAccess.Interfaces;
+using ParkCinema.DataAccess.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +13,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<AppDbContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+
+builder.Services.AddScoped<IFilmRepository, FilmRepository>();
+builder.Services.AddScoped<IFilmService,FilmService>();
 
 var app = builder.Build();
 

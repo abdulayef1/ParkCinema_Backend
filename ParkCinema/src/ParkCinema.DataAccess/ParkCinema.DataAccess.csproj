@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ParkCinema.Core\ParkCinema.Core.csproj" />
+  </ItemGroup>
+
 </Project>

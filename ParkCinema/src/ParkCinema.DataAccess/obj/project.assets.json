@@ -40,12 +40,12 @@
         },
         "compile": {
           "ref/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {
-            "related": ".xml;.pdb"
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {
-            "related": ".xml;.pdb"
+            "related": ".pdb;.xml"
           }
         },
         "runtimeTargets": {
@@ -781,6 +781,16 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "ParkCinema.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ParkCinema.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParkCinema.Core.dll": {}
         }
       }
     }
@@ -2003,29 +2013,35 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ParkCinema.Core/1.0.0": {
+      "type": "project",
+      "path": "../ParkCinema.Core/ParkCinema.Core.csproj",
+      "msbuildProject": "../ParkCinema.Core/ParkCinema.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 6.0.13",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.13",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.13"
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.13",
+      "ParkCinema.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Мухаммед\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Мухаммед\\Desktop\\WORKSPACE\\FinalProject\\ParkCinema\\src\\ParkCinema.DataAccess\\ParkCinema.DataAccess.csproj",
+      "projectUniqueName": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.DataAccess\\ParkCinema.DataAccess.csproj",
       "projectName": "ParkCinema.DataAccess",
-      "projectPath": "C:\\Users\\Мухаммед\\Desktop\\WORKSPACE\\FinalProject\\ParkCinema\\src\\ParkCinema.DataAccess\\ParkCinema.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\Мухаммед\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Мухаммед\\Desktop\\WORKSPACE\\FinalProject\\ParkCinema\\src\\ParkCinema.DataAccess\\obj\\",
+      "projectPath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.DataAccess\\ParkCinema.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Мухаммед\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2038,7 +2054,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj": {
+              "projectPath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -2082,7 +2102,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

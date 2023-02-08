@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Мухаммед\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Мухаммед\\Desktop\\WORKSPACE\\FinalProject\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj",
+      "projectUniqueName": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj",
       "projectName": "ParkCinema.Core",
-      "projectPath": "C:\\Users\\Мухаммед\\Desktop\\WORKSPACE\\FinalProject\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj",
-      "packagesPath": "C:\\Users\\Мухаммед\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Мухаммед\\Desktop\\WORKSPACE\\FinalProject\\ParkCinema\\src\\ParkCinema.Core\\obj\\",
+      "projectPath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Мухаммед\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

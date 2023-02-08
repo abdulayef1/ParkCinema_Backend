@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m4gnYHDPnBN97ulEycmKsZeODVtffb87iX6HEC/vUxCaIrZbuqPTVvWokN61i4oXlHSzGCrCX906PrQJFuy0LA==",
+  "dgSpecHash": "OH7MU40FIa06XtHNyU/gdO8t/zzkB/CuHo6qmHpGC7XniTX50T5qFJ219LYF0oJakCyr4zM8AugkAKJ49yVUVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Мухаммед\\Desktop\\WORKSPACE\\FinalProject\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj",
+  "projectFilePath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
