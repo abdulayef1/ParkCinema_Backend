@@ -41,7 +41,6 @@ C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\P
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.AssemblyInfoInputs.cache
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.AssemblyInfo.cs
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.csproj.CoreCompileInputs.cache
-C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.MvcApplicationPartsAssemblyInfo.cs
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.MvcApplicationPartsAssemblyInfo.cache
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\staticwebassets\msbuild.ParkCinema.API.Microsoft.AspNetCore.StaticWebAssets.props
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\staticwebassets\msbuild.build.ParkCinema.API.props
@@ -98,3 +97,4 @@ C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\H
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ParkCinema.Business.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ParkCinema.Business.pdb
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.MvcApplicationPartsAssemblyInfo.cs

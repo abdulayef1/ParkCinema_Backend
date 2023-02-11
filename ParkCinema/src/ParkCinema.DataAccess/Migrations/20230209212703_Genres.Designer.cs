@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParkCinema.DataAccess.Contexts;
 
@@ -11,9 +12,10 @@ using ParkCinema.DataAccess.Contexts;
 namespace ParkCinema.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230209212703_Genres")]
+    partial class Genres
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,24 +80,6 @@ namespace ParkCinema.DataAccess.Migrations
                     b.ToTable("Films");
                 });
 
-            modelBuilder.Entity("ParkCinema.Core.Entities.Film_Genre", b =>
-                {
-                    b.Property<int>("Film_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Genre_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("Film_Id", "Genre_Id");
-
-                    b.HasIndex("Genre_Id");
-
-                    b.ToTable("Film_Genres");
-                });
-
             modelBuilder.Entity("ParkCinema.Core.Entities.Genre", b =>
                 {
                     b.Property<int>("Id")
@@ -112,35 +96,6 @@ namespace ParkCinema.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
-                });
-
-            modelBuilder.Entity("ParkCinema.Core.Entities.Film_Genre", b =>
-                {
-                    b.HasOne("ParkCinema.Core.Entities.Film", "Film")
-                        .WithMany("Film_Genres")
-                        .HasForeignKey("Film_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ParkCinema.Core.Entities.Genre", "Genre")
-                        .WithMany("Film_Genres")
-                        .HasForeignKey("Genre_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("Genre");
-                });
-
-            modelBuilder.Entity("ParkCinema.Core.Entities.Film", b =>
-                {
-                    b.Navigation("Film_Genres");
-                });
-
-            modelBuilder.Entity("ParkCinema.Core.Entities.Genre", b =>
-                {
-                    b.Navigation("Film_Genres");
                 });
 #pragma warning restore 612, 618
         }

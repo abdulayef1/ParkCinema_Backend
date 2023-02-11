@@ -16,4 +16,8 @@ public class Film : IEntity
     public string? Poster { get; set; }
     public bool IsNew { get; set; }
     public DateTime Date { get; set; }
+
+    //
+    public ICollection<Film_Genre> Film_Genres { get; set; } = null!;
+
 }
