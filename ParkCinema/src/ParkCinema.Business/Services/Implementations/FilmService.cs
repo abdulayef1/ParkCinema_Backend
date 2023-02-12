@@ -17,6 +17,14 @@ public class FilmService : IFilmService
 
     public async Task<List<Film>> FindAllAsync()
     {
-        return await _filmRepository.FindAll().ToListAsync();
+        
+        var films = await _filmRepository.FindAll()
+            .Include(fg => fg.Film_Genres).ThenInclude(g => g.Genre)
+            .Include(fl => fl.Film_Languages).ThenInclude(fl => fl.Language)
+            .Include(ff=>ff.Film_Formats).ThenInclude(ff => ff.Format)
+            .Include(fs=>fs.Film_Subtitles).ThenInclude(fs=>fs.Subtitle)
+            .ToListAsync();
+
+        return films;
     }
 }

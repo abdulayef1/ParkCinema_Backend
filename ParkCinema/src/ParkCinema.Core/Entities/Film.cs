@@ -1,4 +1,6 @@
 ﻿using ParkCinema.Core.Interfaces;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ParkCinema.Core.Entities;
 
@@ -17,7 +19,16 @@ public class Film : IEntity
     public bool IsNew { get; set; }
     public DateTime Date { get; set; }
 
-    //
-    public ICollection<Film_Genre> Film_Genres { get; set; } = null!;
+    // 
+    [NotMapped]
+    public ICollection<Film_Genre>? Film_Genres { get; set; }
+    
+    [NotMapped]
+    public ICollection<Film_Language>? Film_Languages { get; set; }
 
+    [NotMapped]
+    public ICollection<Film_Format>? Film_Formats { get; set; }   
+    
+    [NotMapped]
+    public ICollection<Film_Subtitle>? Film_Subtitles { get; set; }
 }

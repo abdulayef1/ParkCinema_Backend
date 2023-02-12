@@ -12,8 +12,8 @@ using ParkCinema.DataAccess.Contexts;
 namespace ParkCinema.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230211134554_Film_Genres")]
-    partial class Film_Genres
+    [Migration("20230212143919_Languages")]
+    partial class Languages
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,9 +88,6 @@ namespace ParkCinema.DataAccess.Migrations
                     b.Property<int>("Genre_Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.HasKey("Film_Id", "Genre_Id");
 
                     b.HasIndex("Genre_Id");
@@ -114,6 +111,24 @@ namespace ParkCinema.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
+                });
+
+            modelBuilder.Entity("ParkCinema.Core.Entities.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages");
                 });
 
             modelBuilder.Entity("ParkCinema.Core.Entities.Film_Genre", b =>
