@@ -1,11 +1,12 @@
-﻿using ParkCinema.Core.Entities;
+﻿using ParkCinema.Business.DTOs.Film;
+using ParkCinema.Core.Entities;
 using System.Linq.Expressions;
 
 namespace ParkCinema.Business.Services.Interfaces;
 
 public interface IFilmService
 {
-    Task<List<Film>> FindAllAsync();
+    Task<List<FilmDTO>> FindAllAsync();
 
 
     //Task<CourseDTO> FindByIdAsync(int id);

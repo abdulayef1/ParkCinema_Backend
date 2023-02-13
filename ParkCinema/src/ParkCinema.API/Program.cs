@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ParkCinema.Business.DTOs.Film;
 using ParkCinema.Business.Services.Implementations;
 using ParkCinema.Business.Services.Interfaces;
 using ParkCinema.DataAccess.Contexts;
@@ -26,6 +27,10 @@ builder.Services.AddScoped<IFilmService,FilmService>();
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
+
+builder.Services.AddAutoMapper(typeof(FilmDTO).Assembly);
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

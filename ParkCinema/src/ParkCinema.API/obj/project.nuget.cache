@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "DVVAsZSAbUJE9Be3UhY88OZ3aG+m4ClEIwKXluICF7czbBn+N51nr/up6hNzzYEmp7AQ8wuEojdq39bQRm4Zxw==",
+  "dgSpecHash": "xMDVYXmnN+xClCOt+ce2x6oTjGTLxxO0dWaaKtFS7gULou5Gvavcridf15eDDedVLCnsWeGhaZEpI4vjui/kpA==",
   "success": true,
   "projectFilePath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.API\\ParkCinema.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.13\\microsoft.aspnetcore.jsonpatch.6.0.13.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.13\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.13.nupkg.sha512",
