@@ -23,7 +23,7 @@ public class FilmDTO
 
     // 
     public ICollection<GenreDTO>? Genres { get; set; }
-    public ICollection<LanguageDTO>? Film_Languages { get; set; }
-    public ICollection<FormatDTO>? Film_Formats { get; set; }
-    public ICollection<SubtitleDTO>? Film_Subtitles { get; set; }
+    public ICollection<LanguageDTO>? Languages { get; set; }
+    public ICollection<FormatDTO>? Formats { get; set; }
+    public ICollection<SubtitleDTO>? Subtitles { get; set; }
 }

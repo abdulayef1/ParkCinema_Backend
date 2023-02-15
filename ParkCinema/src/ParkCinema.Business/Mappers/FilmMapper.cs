@@ -13,19 +13,32 @@ public class FilmMapper : Profile
     public FilmMapper()
     {
         CreateMap<Film, FilmDTO>()
-            //.ForMember(x => x.Genres, opt => opt.MapFrom(s => s.Film_Genres))
             .ForMember(x => x.Genres, opt => opt.MapFrom(s => s.Film_Genres
                 .Select(g => new GenreDTO { GenreId = g.Genre_Id,Name=g.Genre.Name})
             ))
-            .ForMember(x => x.Film_Subtitles, opt => opt.MapFrom(s => s.Film_Subtitles
+            .ForMember(x => x.Subtitles, opt => opt.MapFrom(s => s.Film_Subtitles
                 .Select(g => new SubtitleDTO { Id = g.Subtitle_Id, Name = g.Subtitle.Name})
             ))
-            .ForMember(x => x.Film_Languages, opt => opt.MapFrom(s => s.Film_Languages
+            .ForMember(x => x.Languages, opt => opt.MapFrom(s => s.Film_Languages
                 .Select(g => new LanguageDTO { Id = g.Language_Id, Name = g.Language.Name })
             ))
-            .ForMember(x => x.Film_Formats, opt => opt.MapFrom(s => s.Film_Formats
+            .ForMember(x => x.Formats, opt => opt.MapFrom(s => s.Film_Formats
                 .Select(g => new FormatDTO { Id = g.Format_Id, Name = g.Format.Name })
             ))
             .ReverseMap();
+
+
+        //?COMPLETE MAPPER
+
+        CreateMap<FilmCreateDTO, Film>().ReverseMap();  
+
+
+        //CreateMap<FilmCreateDTO, Film>()
+        //     .ForMember(x => x.Film_Genres, y => y.MapFrom(s => s.Genres_Id
+        //     .Select(g => new Film_Genre { })
+        //     ))
+        //     .ReverseMap();
+
+
     }
 }

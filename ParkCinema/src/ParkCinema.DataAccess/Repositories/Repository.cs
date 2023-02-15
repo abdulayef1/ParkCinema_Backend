@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ParkCinema.Core.Interfaces;
 using ParkCinema.DataAccess.Contexts;
 using ParkCinema.DataAccess.Interfaces;
 using System.Linq.Expressions;
 
 namespace ParkCinema.DataAccess.Repositories;
 
-public class Repository<T> : IRepository<T> where T : class, IEntity, new()
+public class Repository<T> : IRepository<T> where T : class, new()
 {
 
 

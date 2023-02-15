@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace ParkCinema.DataAccess.Interfaces;
 
-public interface IRepository<T> where T : class, IEntity, new()
+public interface IRepository<T> where T : class, new()
 {
     IQueryable<T> FindAll();
     Task<T?> FindByIdAsync(int id);

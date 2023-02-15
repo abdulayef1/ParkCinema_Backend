@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Of1IIqY6wUAd1cAAauRYOv1qZLSLfrAaAaC+iMiyKnCH7lmB/jFVqXbV/+XCB4BInLC9qct7jZKxBy2LZed+eg==",
+  "dgSpecHash": "uvSZo1dg+cmEEnIYPHv3vcvBJSF2eJRCf1F13nFQH11bCPw5zItDva1RG+sTY3i3J2rBjnq3BBX75rmNapMbpw==",
   "success": true,
   "projectFilePath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Business\\ParkCinema.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.13\\microsoft.aspnetcore.jsonpatch.6.0.13.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.13\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.13.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -1,6 +1,5 @@
 ﻿using ParkCinema.Core.Interfaces;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 namespace ParkCinema.Core.Entities;
 

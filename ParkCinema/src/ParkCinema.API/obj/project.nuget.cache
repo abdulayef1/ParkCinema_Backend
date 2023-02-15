@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "xMDVYXmnN+xClCOt+ce2x6oTjGTLxxO0dWaaKtFS7gULou5Gvavcridf15eDDedVLCnsWeGhaZEpI4vjui/kpA==",
+  "dgSpecHash": "eajQgH5v41WgEBiIFrW1YXeKY7+kFXfldJRAz66KslyJYLIkO1NXq5JJyDH+dY76NYoxTnOW0EqVI5jhql6S5Q==",
   "success": true,
   "projectFilePath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.API\\ParkCinema.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.13\\microsoft.aspnetcore.jsonpatch.6.0.13.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.13\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.13.nupkg.sha512",

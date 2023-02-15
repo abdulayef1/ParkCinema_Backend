@@ -104,3 +104,6 @@ C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\N
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\AutoMapper.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\FluentValidation.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
