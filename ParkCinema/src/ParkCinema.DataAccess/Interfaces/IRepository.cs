@@ -1,4 +1,5 @@
 ﻿using ParkCinema.Core.Interfaces;
+using ParkCinema.DataAccess.Repositories;
 using System.Linq.Expressions;
 
 namespace ParkCinema.DataAccess.Interfaces;

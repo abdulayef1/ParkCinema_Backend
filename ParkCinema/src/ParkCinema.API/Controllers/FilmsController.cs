@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ParkCinema.Business.DTOs.Film;
 using ParkCinema.Business.Services.Interfaces;
+using ParkCinema.Business.Utilities.Exceptions;
 using System.Net;
 
 namespace ParkCinema.API.Controllers;
@@ -25,16 +26,29 @@ public class FilmsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(FilmCreateDTO createDTO)
+    public async Task<IActionResult> Post(FilmCreateDTO filmCreateDTO)
     {
         if (!ModelState.IsValid)
         {
             return StatusCode(StatusCodes.Status400BadRequest, ModelState);
-
         }
-        await _filmService.CreateAsync(createDTO);
-        return StatusCode((int)HttpStatusCode.Created);
-
+        try
+        {
+            await _filmService.CreateAsync(filmCreateDTO);
+            return StatusCode((int)HttpStatusCode.Created);
+        }
+        catch (NullReferenceException ex)
+        {
+            return NotFound(ex.Message);
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+        catch (Exception)
+        {
+            return StatusCode((int)HttpStatusCode.InternalServerError);
+        }
     }
 
 

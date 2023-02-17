@@ -32,7 +32,8 @@ public class Repository<T> : IRepository<T> where T : class, new()
 
     public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
     {
-       return _table.Where(expression).AsNoTracking();
+        var result = _table.Where(expression).AsNoTracking();
+        return result;
     }
 
     public async Task CreateAsync(T entity)

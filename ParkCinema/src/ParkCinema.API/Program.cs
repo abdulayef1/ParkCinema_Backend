@@ -27,11 +27,18 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+//Repo
 builder.Services.AddScoped<IFilmRepository, FilmRepository>();
 builder.Services.AddScoped<IFilm_GenreRepository,Film_GenreRepository>();
 builder.Services.AddScoped<IFilm_LanguageRepository,Film_LanguageRepository>();
 builder.Services.AddScoped<IFilm_FormatRepository,Film_FormatRepository>();
 builder.Services.AddScoped<IFilm_SubtitleRepository,Film_SubtitleRepository>();
+builder.Services.AddScoped<ISubtitleRepository,SubtitleRepository>();
+builder.Services.AddScoped<IFormatRepository,FormatRepository>();
+builder.Services.AddScoped<IGenreRepository,GenreRepository>();
+builder.Services.AddScoped<ILanguageRepository,LanguageRepository>();
+
+
 builder.Services.AddScoped<IFilmService,FilmService>();
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
