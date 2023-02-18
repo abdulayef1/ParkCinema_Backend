@@ -81,6 +81,23 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Http.Features/5.0.17": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.1",
+          "System.IO.Pipelines": "5.0.2"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.JsonPatch/6.0.13": {
         "type": "package",
         "dependencies": {
@@ -703,6 +720,19 @@
           }
         }
       },
+      "System.IO.Pipelines/5.0.2": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Runtime.Caching/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -884,6 +914,19 @@
           }
         }
       },
+      "ParkCinema.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+        },
+        "compile": {
+          "bin/placeholder/ParkCinema.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParkCinema.Application.dll": {}
+        }
+      },
       "ParkCinema.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -996,6 +1039,25 @@
         "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.17": {
+      "sha512": "3jG2xS+dx8DDCGV/F+STdPTg89lX3ao3dF/VEPvJaz3wzBIjuadipTtYNEXDIVuOPZwb6jdmhrX9jkzOIBm5cw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/5.0.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.AspNetCore.JsonPatch/6.0.13": {
@@ -1886,6 +1948,32 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
+    "System.IO.Pipelines/5.0.2": {
+      "sha512": "Iew+dfa6FFiyvWBdRmXApixRY1db+beyutpIck4SOSe0NLM8FD/7AD54MscqVLhvfSMLHO7KadjTRT7fqxOGTA==",
+      "type": "package",
+      "path": "system.io.pipelines/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.IO.Pipelines.dll",
+        "lib/net461/System.IO.Pipelines.xml",
+        "lib/netcoreapp3.0/System.IO.Pipelines.dll",
+        "lib/netcoreapp3.0/System.IO.Pipelines.xml",
+        "lib/netstandard1.3/System.IO.Pipelines.dll",
+        "lib/netstandard1.3/System.IO.Pipelines.xml",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.xml",
+        "ref/netcoreapp2.0/System.IO.Pipelines.dll",
+        "ref/netcoreapp2.0/System.IO.Pipelines.xml",
+        "system.io.pipelines.5.0.2.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Runtime.Caching/4.7.0": {
       "sha512": "NdvNRjTPxYvIEhXQszT9L9vJhdQoX6AQ0AlhjTU+5NqFQVuacJTfhPVAvtGWNA2OJCqRiR/okBcZgMwI6MqcZg==",
       "type": "package",
@@ -2243,6 +2331,11 @@
         "version.txt"
       ]
     },
+    "ParkCinema.Application/1.0.0": {
+      "type": "project",
+      "path": "../ParkCinema.Application/ParkCinema.Application.csproj",
+      "msbuildProject": "../ParkCinema.Application/ParkCinema.Application.csproj"
+    },
     "ParkCinema.Core/1.0.0": {
       "type": "project",
       "path": "../ParkCinema.Core/ParkCinema.Core.csproj",
@@ -2260,7 +2353,7 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "FluentValidation.AspNetCore >= 11.2.2",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 6.0.13",
-      "ParkCinema.Core >= 1.0.0",
+      "ParkCinema.Application >= 1.0.0",
       "ParkCinema.DataAccess >= 1.0.0"
     ]
   },
@@ -2291,8 +2384,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj": {
-              "projectPath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Core\\ParkCinema.Core.csproj"
+            "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Application\\ParkCinema.Application.csproj": {
+              "projectPath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Application\\ParkCinema.Application.csproj"
             },
             "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.DataAccess\\ParkCinema.DataAccess.csproj": {
               "projectPath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.DataAccess\\ParkCinema.DataAccess.csproj"

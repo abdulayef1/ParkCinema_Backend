@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ParkCinema.Business\ParkCinema.Business.csproj" />
+    <ProjectReference Include="..\ParkCinema.Infrastructure\ParkCinema.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

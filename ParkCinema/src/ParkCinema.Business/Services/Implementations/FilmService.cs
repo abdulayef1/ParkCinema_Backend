@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using ParkCinema.Application.Abstraction.Storage;
 using ParkCinema.Business.DTOs.Film;
 using ParkCinema.Business.Services.Interfaces;
 using ParkCinema.Business.Utilities.Exceptions;
 using ParkCinema.Core.Entities;
 using ParkCinema.DataAccess.Interfaces;
-using System.Linq.Expressions;
+using System.IO.IsolatedStorage;
 
 namespace ParkCinema.Business.Services.Implementations;
 
@@ -21,7 +22,7 @@ public class FilmService : IFilmService
     private readonly ILanguageRepository _languageRepository;
     private readonly ISubtitleRepository _subtitleRepository;
     private readonly IMapper _mapper;
-
+    private readonly IStorageService
 
     public FilmService(IFilmRepository filmRepository,
                        IFilm_GenreRepository film_GenreRepository,

@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ParkCinema.Core\ParkCinema.Core.csproj" />
     <ProjectReference Include="..\ParkCinema.DataAccess\ParkCinema.DataAccess.csproj" />
   </ItemGroup>
 

@@ -45,7 +45,7 @@ public class FilmsController : ControllerBase
         {
             return NotFound(ex.Message);
         }
-        catch (Exception)
+        catch (Exception) 
         {
             return StatusCode((int)HttpStatusCode.InternalServerError);
         }

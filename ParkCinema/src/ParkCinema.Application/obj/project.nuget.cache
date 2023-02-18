@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "JbGHk9FUhuBs4n9dllVekDXdB3UciY0oV2jilIqsePIM7CltSFmGl60jphpcsvm67REcdsJhzePO9pnNiu8sPA==",
+  "success": true,
+  "projectFilePath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Application\\ParkCinema.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

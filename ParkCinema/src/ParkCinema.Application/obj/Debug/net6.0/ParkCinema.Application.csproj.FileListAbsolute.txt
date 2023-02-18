@@ -1,0 +1,12 @@
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\bin\Debug\net6.0\ParkCinema.Application.deps.json
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\bin\Debug\net6.0\ParkCinema.Application.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\bin\Debug\net6.0\ParkCinema.Application.pdb
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\obj\Debug\net6.0\ParkCinema.Application.csproj.AssemblyReference.cache
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\obj\Debug\net6.0\ParkCinema.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\obj\Debug\net6.0\ParkCinema.Application.AssemblyInfoInputs.cache
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\obj\Debug\net6.0\ParkCinema.Application.AssemblyInfo.cs
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\obj\Debug\net6.0\ParkCinema.Application.csproj.CoreCompileInputs.cache
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\obj\Debug\net6.0\ParkCinema.Application.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\obj\Debug\net6.0\refint\ParkCinema.Application.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\obj\Debug\net6.0\ParkCinema.Application.pdb
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Application\obj\Debug\net6.0\ref\ParkCinema.Application.dll

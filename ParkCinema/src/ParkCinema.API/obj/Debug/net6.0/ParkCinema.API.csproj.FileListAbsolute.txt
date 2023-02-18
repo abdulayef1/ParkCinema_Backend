@@ -107,3 +107,13 @@ C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\F
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.MvcApplicationPartsAssemblyInfo.cs
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Azure.Core.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ParkCinema.Application.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ParkCinema.Infrastructure.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ParkCinema.Infrastructure.pdb
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ParkCinema.Application.pdb

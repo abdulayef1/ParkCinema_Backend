@@ -1,13 +1,14 @@
-using FluentValidation.AspNetCore;
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using ParkCinema.Business.DTOs.Film;
 using ParkCinema.Business.Services.Implementations;
 using ParkCinema.Business.Services.Interfaces;
-using ParkCinema.DataAccess.Contexts;
-using ParkCinema.DataAccess.Interfaces;
-using ParkCinema.DataAccess.Repositories;
 using ParkCinema.Business.Validators.Film;
+using ParkCinema.DataAccess;
+using ParkCinema.DataAccess.Contexts;
+using ParkCinema.Infrastructure;
+using ParkCinema.Infrastructure.Services.Storage.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Services.AddControllers();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssembly(typeof(FilmCreateDTO_Validator).Assembly);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -27,16 +29,15 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-//Repo
-builder.Services.AddScoped<IFilmRepository, FilmRepository>();
-builder.Services.AddScoped<IFilm_GenreRepository,Film_GenreRepository>();
-builder.Services.AddScoped<IFilm_LanguageRepository,Film_LanguageRepository>();
-builder.Services.AddScoped<IFilm_FormatRepository,Film_FormatRepository>();
-builder.Services.AddScoped<IFilm_SubtitleRepository,Film_SubtitleRepository>();
-builder.Services.AddScoped<ISubtitleRepository,SubtitleRepository>();
-builder.Services.AddScoped<IFormatRepository,FormatRepository>();
-builder.Services.AddScoped<IGenreRepository,GenreRepository>();
-builder.Services.AddScoped<ILanguageRepository,LanguageRepository>();
+//Repository
+builder.Services.AddRepositoryServices();
+
+//Infrastructure
+builder.Services.AddInfrastructureServices();
+
+//Storage
+builder.Services.AddStorage<AzureStorage>();
+
 
 
 builder.Services.AddScoped<IFilmService,FilmService>();
