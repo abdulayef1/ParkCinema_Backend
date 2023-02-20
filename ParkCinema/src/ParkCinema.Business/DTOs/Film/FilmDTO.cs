@@ -2,8 +2,6 @@
 using ParkCinema.Business.DTOs.Genre;
 using ParkCinema.Business.DTOs.Language;
 using ParkCinema.Business.DTOs.Subtitle;
-using ParkCinema.Core.Entities;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ParkCinema.Business.DTOs.Film;
 
@@ -18,12 +16,12 @@ public class FilmDTO
     public string? Actors { get; set; }
     public string? Description { get; set; }
     public string? Trailer { get; set; }
-    public string? Poster { get; set; }
     public DateTime Date { get; set; }
+    public string? Uri { get; set; }
 
     // 
-    public ICollection<GenreDTO>? Genres { get; set; }
-    public ICollection<LanguageDTO>? Languages { get; set; }
-    public ICollection<FormatDTO>? Formats { get; set; }
-    public ICollection<SubtitleDTO>? Subtitles { get; set; }
+    public ICollection<GenreDTO> Genres { get; set; } = null!;
+    public ICollection<LanguageDTO> Languages { get; set; } = null!;
+    public ICollection<FormatDTO> Formats { get; set; } = null!;
+    public ICollection<SubtitleDTO> Subtitles { get; set; } = null!;
 }

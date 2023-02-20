@@ -15,3 +15,5 @@ C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Business\bin\Debug\net
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Business\obj\Debug\net6.0\ParkCinema.Business.csproj.CopyComplete
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Business\bin\Debug\net6.0\ParkCinema.DataAccess.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Business\bin\Debug\net6.0\ParkCinema.DataAccess.pdb
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Business\bin\Debug\net6.0\ParkCinema.Application.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.Business\bin\Debug\net6.0\ParkCinema.Application.pdb

@@ -18,7 +18,7 @@ public class FilmCreateDTO_Validator : AbstractValidator<FilmCreateDTO>
         RuleFor(filmDto => filmDto.Director).NotNull().NotEmpty().WithMessage("Director name is requried")
                                         .Length(3, 300).WithMessage("The range of charecters must be between 3 and 300");
         RuleFor(filmDto => filmDto.Trailer).NotNull().NotEmpty().WithMessage("Trailer is requried");
-        RuleFor(filmDto => filmDto.Poster).NotNull().NotEmpty().WithMessage("Poster is requried");
+        RuleFor(filmDto => filmDto.Image).NotNull().NotEmpty().WithMessage("Image is requried");
         RuleFor(filmdDto=>filmdDto.Actors).NotNull().NotEmpty().WithMessage("Actors name is requried");
         RuleFor(filmdDto=>filmdDto.IsNew).NotNull().WithMessage("This field is requried");
 

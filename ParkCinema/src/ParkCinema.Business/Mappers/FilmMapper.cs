@@ -27,17 +27,11 @@ public class FilmMapper : Profile
             ))
             .ReverseMap();
 
-
-        //?COMPLETE MAPPER
-
-        CreateMap<FilmCreateDTO, Film>().ReverseMap();  
+        CreateMap<FilmCreateDTO, Film>().ReverseMap();
+        CreateMap<FilmUpdateDTO, Film>().ReverseMap();
 
 
-        //CreateMap<FilmCreateDTO, Film>()
-        //     .ForMember(x => x.Film_Genres, y => y.MapFrom(s => s.Genres_Id
-        //     .Select(g => new Film_Genre { })
-        //     ))
-        //     .ReverseMap();
+     
 
 
     }

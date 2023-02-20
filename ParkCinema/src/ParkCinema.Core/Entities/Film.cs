@@ -15,19 +15,21 @@ public class Film : IEntity
     public string? Description { get; set; }
     public string? Trailer { get; set; }
     public string? Poster { get; set; }
+    public string? Uri { get; set; }
+    public string? PosterPathOrContainerName { get; set; }
     public bool IsNew { get; set; }
     public DateTime Date { get; set; }
 
     // 
     [NotMapped]
-    public ICollection<Film_Genre>? Film_Genres { get; set; }
-    
-    [NotMapped]
-    public ICollection<Film_Language>? Film_Languages { get; set; }
+    public ICollection<Film_Genre> Film_Genres { get; set; } = null!;
 
     [NotMapped]
-    public ICollection<Film_Format>? Film_Formats { get; set; }   
+    public ICollection<Film_Language> Film_Languages { get; set; } = null!;
+
+    [NotMapped]
+    public ICollection<Film_Format> Film_Formats { get; set; } = null!; 
     
     [NotMapped]
-    public ICollection<Film_Subtitle>? Film_Subtitles { get; set; }
+    public ICollection<Film_Subtitle> Film_Subtitles { get; set; }=null!;
 }

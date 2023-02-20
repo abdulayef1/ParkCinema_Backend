@@ -29,7 +29,7 @@ public class AzureStorage : IAzureStorage
 
         BlobClient blobClient = _containerClient.GetBlobClient(file.FileName);
         await blobClient.UploadAsync(file.OpenReadStream());
-        datas = (file.Name, containerName);
+        datas = (file.FileName, containerName);
         return datas;
     }
     public async Task<List<(string fileName, string pathOrContainerName)>> UploadAsync(string containerName, IFormFileCollection files)

@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using ParkCinema.Application.Abstraction.Storage;
 using ParkCinema.Business.DTOs.Film;
 using ParkCinema.Business.Services.Interfaces;
 using ParkCinema.Business.Utilities.Exceptions;
 using ParkCinema.Core.Entities;
 using ParkCinema.DataAccess.Interfaces;
-using System.IO.IsolatedStorage;
 
 namespace ParkCinema.Business.Services.Implementations;
 
@@ -22,8 +22,8 @@ public class FilmService : IFilmService
     private readonly ILanguageRepository _languageRepository;
     private readonly ISubtitleRepository _subtitleRepository;
     private readonly IMapper _mapper;
-    private readonly IStorageService
-
+    private readonly IStorageService _storageService;
+    private readonly IConfiguration _configuration;
     public FilmService(IFilmRepository filmRepository,
                        IFilm_GenreRepository film_GenreRepository,
                        IFilm_FormatRepository film_FormatRepository,
@@ -33,7 +33,10 @@ public class FilmService : IFilmService
                        IFormatRepository formatRepository,
                        ILanguageRepository languageRepository,
                        ISubtitleRepository subtitleRepository,
-                       IMapper mapper)
+                       IMapper mapper,
+                       IStorageService storageService,
+                       IConfiguration configuration
+        )
     {
         _filmRepository = filmRepository;
         _film_GenreRepository = film_GenreRepository;
@@ -46,13 +49,21 @@ public class FilmService : IFilmService
         _genreRepository = genreRepository;
 
         _mapper = mapper;
+
+        _storageService = storageService;
+
+        _configuration = configuration;
     }
 
+    //? Complete filmDto, film poster path is not exsist in film dto 
+    //? Fix the bug in the update 
+    //? Update and Delete images from container
 
 
-    //? COMPLETE DTOS, ADD MAPPER AND VALIDATOR
     public async Task<List<FilmDTO>> FindAllAsync()
     {
+
+        //! Take Join tables
         var films = await _filmRepository.FindByCondition(con => con.IsNew != true)
             .Include(fg => fg.Film_Genres).ThenInclude(g => g.Genre)
             .Include(fl => fl.Film_Languages).ThenInclude(fl => fl.Language)
@@ -60,6 +71,8 @@ public class FilmService : IFilmService
             .Include(fs => fs.Film_Subtitles).ThenInclude(fs => fs.Subtitle)
             .ToListAsync();
 
+
+        //! Mapping film to filmDto
         List<FilmDTO> filmDTO = _mapper.Map<List<FilmDTO>>(films);
         return filmDTO;
     }
@@ -70,7 +83,7 @@ public class FilmService : IFilmService
             throw new NullReferenceException("Film is null");
         }
 
-        //Maybe there is not genre,lang,subtit,format in this id,check all id
+        //! Maybe there is not genre,lang,subtitle,format in this id,check all of them
         foreach (var id in filmCreateDTO.Genres_Id)
         {
             var genre = await _genreRepository.FindByIdAsync(id);
@@ -104,10 +117,26 @@ public class FilmService : IFilmService
             }
         }
 
+        //! Check image may be null here
+        if (filmCreateDTO.Image is null)
+        {
+            throw new NullReferenceException("Image is null");
+        }
 
+        //! Uploud image to Azure storage
+        (string fileName, string pathOrContainerName) datas = await _storageService.UploadAsync("filmposters", filmCreateDTO.Image);
+
+        //!Create image uri
+        string uri = _configuration["Storage:AzureFilePath"] + @$"{datas.pathOrContainerName}\{datas.pathOrContainerName}";
+
+
+        //! Mapping film creatDto to film
         var film = _mapper.Map<Film>(filmCreateDTO);
+        film.PosterPathOrContainerName = datas.pathOrContainerName;//filmposters/pexels-kyle-roxas-2138922.jpg
+        film.Poster = datas.fileName;
+        film.Uri= uri;
 
-        //add film to film table
+        //! Add film to film table in db
         await _filmRepository.CreateAsync(film);
         await _filmRepository.SaveChangesAsync();
 
@@ -156,11 +185,65 @@ public class FilmService : IFilmService
             await _film_SubtitleRepository.CreateAsync(film_subtitle);
         }
 
+        //! Save all changes in join tables
         await _film_GenreRepository.SaveChangesAsync();
         await _film_LanguageRepository.SaveChangesAsync();
         await _film_FormatRepository.SaveChangesAsync();
         await _film_SubtitleRepository.SaveChangesAsync();
     }
 
+    public async Task<FilmDTO> FindByIdAsync(int id)
+    {
 
+        //! Take Join tables
+        var film = _filmRepository.FindByCondition(con => con.IsNew != true && con.Id == id)
+            .Include(fg => fg.Film_Genres).ThenInclude(g => g.Genre)
+            .Include(fl => fl.Film_Languages).ThenInclude(fl => fl.Language)
+            .Include(ff => ff.Film_Formats).ThenInclude(ff => ff.Format)
+            .Include(fs => fs.Film_Subtitles).ThenInclude(fs => fs.Subtitle)
+            .Single();
+
+
+        //! Mapping film to filmDto
+        FilmDTO filmDTO = _mapper.Map<FilmDTO>(film);
+        return filmDTO;
+    }
+
+    public async Task DeleteAsync(int id)
+    {
+        var film = await _filmRepository.FindByIdAsync(id);
+        if (film is null)
+        {
+            throw new NotFoundException("Film is not found");
+        }
+
+        if (film.Name is null || film.PosterPathOrContainerName is null)
+        {
+            throw new NotFoundException("Fil poster not found");
+        }
+        _storageService.Delete(film.PosterPathOrContainerName, film.Name);
+
+        _filmRepository.Delete(film);
+        await _filmRepository.SaveChangesAsync();
+    }
+
+    public async Task UpdateAsync(int id, FilmUpdateDTO filmUpdateDto)
+    {
+        if (id != filmUpdateDto.Id)
+        {
+            throw new BadRequestException("enter valid id");
+        }
+
+        var film = await _filmRepository.FindByCondition(con => con.Id == filmUpdateDto.Id).SingleAsync();
+
+        if (film is null)
+        {
+            throw new NullReferenceException("Film is null");
+        }
+        var newFilm = _mapper.Map<Film>(filmUpdateDto);
+
+        _filmRepository.Update(newFilm);
+        await _filmRepository.SaveChangesAsync();
+
+    }
 }

@@ -106,7 +106,6 @@ C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\A
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\FluentValidation.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
-C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.MvcApplicationPartsAssemblyInfo.cs
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Azure.Core.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Azure.Storage.Blobs.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Azure.Storage.Common.dll

@@ -8,11 +8,11 @@ public interface IFilmService
 {
     Task<List<FilmDTO>> FindAllAsync();
     Task CreateAsync(FilmCreateDTO filmDTO);
-    
+    Task<FilmDTO> FindByIdAsync(int id);
+    Task DeleteAsync(int id);
+    Task UpdateAsync(int id, FilmUpdateDTO courseUpdateDto);
+
     //Task<List<FilmDTO>> FindByConditionAsync(Expression<Func<Film, bool>> expression);
-    //Task<CreateFilmDTO> FindByIdAsync(int id);
-    //Task UpdateAsync(int id, CourseUpdateDto courseUpdateDto);
-    //Task DeleteAsync(int id);
 
 }
  

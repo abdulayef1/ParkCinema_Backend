@@ -2,8 +2,9 @@
 
 namespace ParkCinema.Business.DTOs.Film;
 
-public class FilmCreateDTO
+public class FilmUpdateDTO
 {
+    public int Id { get; set; }
     public string? Name { get; set; }
     public int AgeLimit { get; set; }
     public int DurationMinute { get; set; }
@@ -16,8 +17,4 @@ public class FilmCreateDTO
     public bool IsNew { get; set; }
     public DateTime Date { get; set; }
 
-    public List<int>? Genres_Id { get; set; }   
-    public List<int>? Languages_Id { get; set; }   
-    public List<int>? Subtitles_Id { get; set; }   
-    public List<int>? Formats_Id { get; set; }   
 }
