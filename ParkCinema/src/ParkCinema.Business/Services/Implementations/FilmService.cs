@@ -196,15 +196,18 @@ public class FilmService : IFilmService
     {
 
         //! Take Join tables
-        var film = _filmRepository.FindByCondition(con => con.IsNew != true && con.Id == id)
-            .Include(fg => fg.Film_Genres).ThenInclude(g => g.Genre)
-            .Include(fl => fl.Film_Languages).ThenInclude(fl => fl.Language)
-            .Include(ff => ff.Film_Formats).ThenInclude(ff => ff.Format)
-            .Include(fs => fs.Film_Subtitles).ThenInclude(fs => fs.Subtitle)
-            .Single();
+        var query = _filmRepository.FindByCondition(con => con.IsNew != true && con.Id == id);
+        if (query.ToList().Count==0) throw new NotFoundException("Film not found");
+
+        var film = query.Include(fg => fg.Film_Genres).ThenInclude(g => g.Genre)
+         .Include(fl => fl.Film_Languages).ThenInclude(fl => fl.Language)
+         .Include(ff => ff.Film_Formats).ThenInclude(ff => ff.Format)
+         .Include(fs => fs.Film_Subtitles).ThenInclude(fs => fs.Subtitle)
+         .Single();
 
 
         //! Mapping film to filmDto
+
         FilmDTO filmDTO = _mapper.Map<FilmDTO>(film);
         return filmDTO;
     }
@@ -224,7 +227,7 @@ public class FilmService : IFilmService
         //Cehchk and delete from storage
         bool isExsist = _storageService.HasFile(film.PosterPathOrContainerName, film.Poster);
         if (!isExsist) throw new NotFoundException("Film poster couldnot find in this path or contanier.");
-            _storageService.Delete(film.PosterPathOrContainerName, film.Poster);
+        _storageService.Delete(film.PosterPathOrContainerName, film.Poster);
         //Delete from database
         _filmRepository.Delete(film);
         await _filmRepository.SaveChangesAsync();

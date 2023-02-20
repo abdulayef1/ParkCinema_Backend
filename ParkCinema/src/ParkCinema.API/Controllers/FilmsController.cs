@@ -61,6 +61,10 @@ public class FilmsController : ControllerBase
             var film = await _filmService.FindByIdAsync(id);
             return Ok(film);
         }
+        catch (NotFoundException)
+        {
+            return StatusCode((int)HttpStatusCode.NotFound);
+        }
         catch (Exception ex)
         {
            // return BadRequest(ex.Message);  
@@ -68,7 +72,6 @@ public class FilmsController : ControllerBase
         }
     }
 
-    //?Complete these controllers
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)

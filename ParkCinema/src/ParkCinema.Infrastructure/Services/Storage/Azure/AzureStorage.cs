@@ -6,7 +6,7 @@ using ParkCinema.Application.Abstraction.Storage.Azure;
 
 namespace ParkCinema.Infrastructure.Services.Storage.Azure;
 
-public class AzureStorage : IAzureStorage
+public class AzureStorage :Storage, IAzureStorage
 {
 
     private readonly BlobServiceClient _blobServiceClient;
@@ -25,9 +25,12 @@ public class AzureStorage : IAzureStorage
 
         (string fileName, string pathOrContainerName) datas = new();
 
-        BlobClient blobClient = _containerClient.GetBlobClient(file.FileName);
+        string newFileName = FileRename(containerName, file.FileName, HasFile);
+
+
+        BlobClient blobClient = _containerClient.GetBlobClient(newFileName);
         await blobClient.UploadAsync(file.OpenReadStream());
-        datas = (file.FileName, containerName);
+        datas = (newFileName, containerName);
         return datas;
     }
     public async Task<List<(string fileName, string pathOrContainerName)>> UploadAsync(string containerName, IFormFileCollection files)
@@ -38,11 +41,15 @@ public class AzureStorage : IAzureStorage
 
         List<(string fileName, string pathOrContainerName)> datas = new();
 
+      
+
         foreach (var file in files)
         {
-            BlobClient blobClient = _containerClient.GetBlobClient(file.FileName);
+            string newFileName = FileRename(containerName, file.FileName, HasFile);
+
+            BlobClient blobClient = _containerClient.GetBlobClient(newFileName);
             await blobClient.UploadAsync(file.OpenReadStream());
-            datas.Add((file.Name, containerName));
+            datas.Add((newFileName, containerName));
         }
         return datas;
     }
