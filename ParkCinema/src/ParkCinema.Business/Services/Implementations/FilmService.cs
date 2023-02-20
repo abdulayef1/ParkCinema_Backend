@@ -127,14 +127,14 @@ public class FilmService : IFilmService
         (string fileName, string pathOrContainerName) datas = await _storageService.UploadAsync("filmposters", filmCreateDTO.Image);
 
         //!Create image uri
-        string uri = _configuration["Storage:AzureFilePath"] + @$"{datas.pathOrContainerName}\{datas.pathOrContainerName}";
+        string uri = _configuration["Storage:AzureFilePath"] + @$"{datas.pathOrContainerName}/{datas.fileName}";
 
 
         //! Mapping film creatDto to film
         var film = _mapper.Map<Film>(filmCreateDTO);
-        film.PosterPathOrContainerName = datas.pathOrContainerName;//filmposters/pexels-kyle-roxas-2138922.jpg
+        film.PosterPathOrContainerName = datas.pathOrContainerName;
         film.Poster = datas.fileName;
-        film.Uri= uri;
+        film.Uri = uri;
 
         //! Add film to film table in db
         await _filmRepository.CreateAsync(film);
@@ -217,12 +217,15 @@ public class FilmService : IFilmService
             throw new NotFoundException("Film is not found");
         }
 
-        if (film.Name is null || film.PosterPathOrContainerName is null)
+        if (film.Poster is null || film.PosterPathOrContainerName is null)
         {
-            throw new NotFoundException("Fil poster not found");
+            throw new NotFoundException("Film poster not found");
         }
-        _storageService.Delete(film.PosterPathOrContainerName, film.Name);
-
+        //Cehchk and delete from storage
+        bool isExsist = _storageService.HasFile(film.PosterPathOrContainerName, film.Poster);
+        if (!isExsist) throw new NotFoundException("Film poster couldnot find in this path or contanier.");
+            _storageService.Delete(film.PosterPathOrContainerName, film.Poster);
+        //Delete from database
         _filmRepository.Delete(film);
         await _filmRepository.SaveChangesAsync();
     }

@@ -2,7 +2,6 @@
 using Azure.Storage.Blobs.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
-using ParkCinema.Application.Abstraction.Storage;
 using ParkCinema.Application.Abstraction.Storage.Azure;
 
 namespace ParkCinema.Infrastructure.Services.Storage.Azure;
@@ -18,7 +17,6 @@ public class AzureStorage : IAzureStorage
         _blobServiceClient = new BlobServiceClient(configuration["Storage:Azure"]);
     }
 
-    //?--------
     public async Task<(string fileName, string pathOrContainerName)> UploadAsync(string containerName, IFormFile file)
     {
         _containerClient = _blobServiceClient.GetBlobContainerClient(containerName);
