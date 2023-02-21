@@ -116,3 +116,4 @@ C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\P
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ParkCinema.Infrastructure.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ParkCinema.Infrastructure.pdb
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ParkCinema.Application.pdb
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.MvcApplicationPartsAssemblyInfo.cs

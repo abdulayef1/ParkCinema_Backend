@@ -56,4 +56,35 @@ public class Repository<T> : IRepository<T> where T : class, new()
         await _context.SaveChangesAsync();
     }
 
+    
+    
+    //?IF I IT I NEED I WILL USE BUT NOW INCLUDE AND THEN INCLUDE IT WORKS FOR ME
+
+    //public async Task<IEnumerable<object>> GetEntitiesWithDetailsAsync<TEntity, TJoinEntity, TDetailEntity>(
+    //    Expression<Func<TEntity, bool>> predicate,
+    //    Expression<Func<TJoinEntity, int>> joinEntityForeignKeySelector,
+    //    Expression<Func<TJoinEntity, TDetailEntity>> detailEntitySelector)
+    //    where TEntity : class
+    //    where TJoinEntity : class
+    //    where TDetailEntity : class
+    //{
+    //    var entities = await _context.Set<TEntity>()
+    //        .Where(predicate)
+    //        .SelectMany(t => _context.Set<TJoinEntity>()
+    //            .Where(j => (int)t.GetType().GetProperty("Id").GetValue(t) == (int)joinEntityForeignKeySelector.Compile().Invoke(j))
+    //            .Select(j => new { Entity = t, Details = detailEntitySelector.Compile().Invoke(j) })
+    //        )
+    //        .ToListAsync();
+
+    //    return entities.Select(entity => new
+    //    {
+    //        Id = entity.Entity.GetType().GetProperty("Id").GetValue(entity.Entity),
+    //        Details = entity.Details
+    //    });
+    //}
+
+
+
+
+
 }

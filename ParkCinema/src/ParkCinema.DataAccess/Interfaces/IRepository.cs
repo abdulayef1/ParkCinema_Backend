@@ -13,4 +13,15 @@ public interface IRepository<T> where T : class, new()
     void Update(T entity);
     void Delete(T entity);
     Task SaveChangesAsync();
+
+    //?IF I IT I NEED I WILL USE BUT NOW INCLUDE AND THEN INCLUDE IT WORKS FOR ME
+
+    //public  Task<IEnumerable<object>> GetEntitiesWithDetailsAsync<TEntity, TJoinEntity, TDetailEntity>(
+    //Expression<Func<TEntity, bool>> predicate,
+    //Expression<Func<TJoinEntity, int>> joinEntityForeignKeySelector,
+    //Expression<Func<TJoinEntity, TDetailEntity>> detailEntitySelector)
+    //where TEntity : class
+    //where TJoinEntity : class
+    //where TDetailEntity : class;
+
 }

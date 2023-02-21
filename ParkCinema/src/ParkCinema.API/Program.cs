@@ -38,9 +38,10 @@ builder.Services.AddInfrastructureServices();
 //Storage
 builder.Services.AddStorage<AzureStorage>();
 
-
-
+//Services
 builder.Services.AddScoped<IFilmService,FilmService>();
+builder.Services.AddScoped<IGenreService, GenreService>();
+
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore

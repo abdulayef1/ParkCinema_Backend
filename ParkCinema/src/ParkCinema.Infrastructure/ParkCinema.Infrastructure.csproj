@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Services\Email\" />
-    <Folder Include="Services\Interfaces\" />
-    <Folder Include="Services\Implementations\" />
     <Folder Include="Services\Storage\Azure\" />
     <Folder Include="Services\Storage\Local\" />
   </ItemGroup>

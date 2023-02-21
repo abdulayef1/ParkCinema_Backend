@@ -1,6 +1,4 @@
 ﻿using ParkCinema.Business.DTOs.Film;
-using ParkCinema.Core.Entities;
-using System.Linq.Expressions;
 
 namespace ParkCinema.Business.Services.Interfaces;
 
