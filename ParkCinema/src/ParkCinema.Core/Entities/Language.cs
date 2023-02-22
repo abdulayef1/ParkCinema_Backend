@@ -10,5 +10,5 @@ public class Language:IEntity
 
     //
     [NotMapped]
-    public ICollection<Film_Language>? Film_Languages { get; set; }
+    public ICollection<Film_Language> Film_Languages { get; set; } = null!;
 }

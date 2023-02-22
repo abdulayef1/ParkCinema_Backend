@@ -5,7 +5,6 @@ using ParkCinema.Business.Services.Interfaces;
 using ParkCinema.Business.Utilities.Exceptions;
 using ParkCinema.Core.Entities;
 using ParkCinema.DataAccess.Interfaces;
-using ParkCinema.DataAccess.Migrations;
 
 namespace ParkCinema.Business.Services.Implementations;
 public class GenreService : IGenreService
