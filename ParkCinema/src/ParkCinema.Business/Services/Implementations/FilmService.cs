@@ -55,7 +55,7 @@ public class FilmService : IFilmService
         _configuration = configuration;
     }
 
-    //? Complete filmDto, film poster path is not exsist in film dto 
+
     //? Fix the bug in the update 
     //? Update and Delete images from container
 
@@ -74,6 +74,7 @@ public class FilmService : IFilmService
 
         //! Mapping film to filmDto
         List<FilmDTO> filmDTO = _mapper.Map<List<FilmDTO>>(films);
+
         return filmDTO;
     }
     public async Task CreateAsync(FilmCreateDTO filmCreateDTO)

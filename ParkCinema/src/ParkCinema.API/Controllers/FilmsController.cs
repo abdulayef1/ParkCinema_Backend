@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ParkCinema.Business.DTOs.Film;
 using ParkCinema.Business.Services.Interfaces;
-using ParkCinema.Business.Utilities.Exceptions;
 using System.Net;
 
 namespace ParkCinema.API.Controllers;
@@ -25,8 +24,6 @@ public class FilmsController : ControllerBase
         return Ok(films);
     }
 
-
-
     [HttpPost]
     public async Task<IActionResult> Post([FromForm] FilmCreateDTO filmCreateDTO)
     {
@@ -34,84 +31,33 @@ public class FilmsController : ControllerBase
         {
             return StatusCode(StatusCodes.Status400BadRequest, ModelState);
         }
-        try
-        {
-            await _filmService.CreateAsync(filmCreateDTO);
-            return StatusCode((int)HttpStatusCode.Created);
-        }
-        catch (NullReferenceException ex)
-        {
-            return NotFound(ex.Message);
-        }
-        catch (NotFoundException ex)
-        {
-            return NotFound(ex.Message);
-        }
-        catch (Exception)
-        {
-            return StatusCode((int)HttpStatusCode.InternalServerError);
-        }
+        await _filmService.CreateAsync(filmCreateDTO);
+        return StatusCode((int)HttpStatusCode.Created);
+
+
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetFilmById([FromRoute] int id)
     {
-        try
-        {
-            var film = await _filmService.FindByIdAsync(id);
-            return Ok(film);
-        }
-        catch (NotFoundException)
-        {
-            return StatusCode((int)HttpStatusCode.NotFound);
-        }
-        catch (Exception ex)
-        {
-           // return BadRequest(ex.Message);  
-           throw new Exception(ex.Message);
-        }
+        var film = await _filmService.FindByIdAsync(id);
+        return Ok(film);
     }
 
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        try
-        {
-            await _filmService.DeleteAsync(id);
-            return Ok();
-        }
-        catch (NotFoundException ex)
-        {
-            return NotFound(ex.Message);
-        }
-        catch (Exception)
-        {
-            return StatusCode((int)HttpStatusCode.InternalServerError);
-        }
+        await _filmService.DeleteAsync(id);
+        return Ok();
     }
-
+    //? I WILL FIX THIS CONTROLLER AND SERVICE
     [HttpPut]
-    public async Task<IActionResult> Update(int id,[FromForm] FilmUpdateDTO filmUpdateDTO)
+    public async Task<IActionResult> Update(int id, [FromForm] FilmUpdateDTO filmUpdateDTO)
     {
-        try
-        {
-            await _filmService.UpdateAsync(id, filmUpdateDTO);
-            return Ok();
-        }
-        catch (BadRequestException ex)
-        {
-            return BadRequest(ex.Message);
-        }
-        catch (NotFoundException ex)
-        {
-            return NotFound(ex.Message);
-        }
-        catch (Exception)
-        {
-            return StatusCode((int)HttpStatusCode.InternalServerError);
-        }
 
+        await _filmService.UpdateAsync(id, filmUpdateDTO);
+        return Ok();
     }
 
 }

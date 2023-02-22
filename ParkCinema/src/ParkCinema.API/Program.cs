@@ -1,6 +1,7 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
+using ParkCinema.API.Extensions;
 using ParkCinema.Business.DTOs.Film;
 using ParkCinema.Business.Services.Implementations;
 using ParkCinema.Business.Services.Interfaces;
@@ -58,6 +59,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//Exception Handler
+app.ConfigureCustomExceptionMiddleware();
 
 app.UseAuthorization();
 
