@@ -10,6 +10,6 @@ public class SubtitleConfiguration : IEntityTypeConfiguration<Subtitle>
     {
         builder.Property(p => p.Name)
             .IsRequired(true)
-            .HasMaxLength(100);
+            .HasMaxLength(4);
     }
 }

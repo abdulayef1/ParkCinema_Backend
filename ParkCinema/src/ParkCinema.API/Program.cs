@@ -43,10 +43,30 @@ builder.Services.AddStorage<AzureStorage>();
 builder.Services.AddScoped<IFilmService,FilmService>();
 builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddScoped<ILanguageService, LanguageService>();
+builder.Services.AddScoped<ISubtitleService, SubtitleService>();
+
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
+
+
+//CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowOrigin", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
+
+
+
+
+
 
 builder.Services.AddAutoMapper(typeof(FilmDTO).Assembly);
 
@@ -59,7 +79,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+//CORS
+app.UseCors();
 //Exception Handler
 app.ConfigureCustomExceptionMiddleware();
 

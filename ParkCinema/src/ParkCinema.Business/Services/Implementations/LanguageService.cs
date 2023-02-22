@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using ParkCinema.Business.DTOs.Genre;
 using ParkCinema.Business.DTOs.Language;
 using ParkCinema.Business.Services.Interfaces;
 using ParkCinema.Business.Utilities.Exceptions;
 using ParkCinema.Core.Entities;
 using ParkCinema.DataAccess.Interfaces;
-using ParkCinema.DataAccess.Repositories;
 
 namespace ParkCinema.Business.Services.Implementations;
 

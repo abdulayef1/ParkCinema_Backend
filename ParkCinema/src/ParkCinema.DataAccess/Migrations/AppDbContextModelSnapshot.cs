@@ -208,8 +208,8 @@ namespace ParkCinema.DataAccess.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(4)
+                        .HasColumnType("nvarchar(4)");
 
                     b.HasKey("Id");
 

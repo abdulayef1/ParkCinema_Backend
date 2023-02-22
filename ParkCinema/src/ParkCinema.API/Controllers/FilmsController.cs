@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using ParkCinema.Business.DTOs.Film;
 using ParkCinema.Business.Services.Interfaces;
 using System.Net;
@@ -7,6 +8,7 @@ namespace ParkCinema.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[EnableCors("AllowOrigin")]
 public class FilmsController : ControllerBase
 {
 
