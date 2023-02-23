@@ -45,6 +45,7 @@ builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddScoped<ILanguageService, LanguageService>();
 builder.Services.AddScoped<ISubtitleService, SubtitleService>();
 builder.Services.AddScoped<IFormatService, FormatService>();
+builder.Services.AddScoped<IFilmGenreService, FilmGenreService>();
 
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>

@@ -1,6 +1,4 @@
-﻿using ParkCinema.Core.Interfaces;
-
-namespace ParkCinema.Core.Entities;
+﻿namespace ParkCinema.Core.Entities;
 
 public class Film_Genre
 {
