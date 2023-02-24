@@ -17,6 +17,10 @@ public static class ServiceRegistration
         services.AddScoped<IFormatRepository, FormatRepository>();
         services.AddScoped<IGenreRepository, GenreRepository>();
         services.AddScoped<ILanguageRepository, LanguageRepository>();
+        services.AddScoped<ICinemaRepository, CinemaRepository>();
+        services.AddScoped<ICinema_ImageRepository, Cinema_ImageRepository>();
+        
+
     }
 
 }

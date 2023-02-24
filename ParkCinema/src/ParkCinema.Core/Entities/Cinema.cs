@@ -1,8 +1,9 @@
 ﻿using ParkCinema.Core.Interfaces;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ParkCinema.Core.Entities;
 
-public class Cinema:IEntity
+public class Cinema : IEntity
 {
     public int Id { get; set; }
     public string? CinemaName { get; set; }
@@ -13,5 +14,9 @@ public class Cinema:IEntity
     public string? MainImage { get; set; }
     public string? MainImageContainerName { get; set; }
     public string? MainImageUri { get; set; }
+
+    // Navigation property
+    [NotMapped]
+    public ICollection<Cinema_Image> Images { get; set; } = null!;
 
 }

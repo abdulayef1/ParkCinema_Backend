@@ -73,6 +73,37 @@ namespace ParkCinema.DataAccess.Migrations
                     b.ToTable("Cinemas");
                 });
 
+            modelBuilder.Entity("ParkCinema.Core.Entities.Cinema_Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CinemaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageContainerName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ImageUri")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CinemaId");
+
+                    b.ToTable("Cinema_Images");
+                });
+
             modelBuilder.Entity("ParkCinema.Core.Entities.Film", b =>
                 {
                     b.Property<int>("Id")
@@ -267,6 +298,17 @@ namespace ParkCinema.DataAccess.Migrations
                     b.ToTable("Subtitles");
                 });
 
+            modelBuilder.Entity("ParkCinema.Core.Entities.Cinema_Image", b =>
+                {
+                    b.HasOne("ParkCinema.Core.Entities.Cinema", "Cinema")
+                        .WithMany("Images")
+                        .HasForeignKey("CinemaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cinema");
+                });
+
             modelBuilder.Entity("ParkCinema.Core.Entities.Film_Format", b =>
                 {
                     b.HasOne("ParkCinema.Core.Entities.Film", "Film")
@@ -341,6 +383,11 @@ namespace ParkCinema.DataAccess.Migrations
                     b.Navigation("Film");
 
                     b.Navigation("Subtitle");
+                });
+
+            modelBuilder.Entity("ParkCinema.Core.Entities.Cinema", b =>
+                {
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("ParkCinema.Core.Entities.Film", b =>

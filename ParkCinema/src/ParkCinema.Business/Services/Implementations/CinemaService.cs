@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Components;
 using ParkCinema.Business.DTOs.Cinema;
 using ParkCinema.Business.Services.Interfaces;
 using ParkCinema.DataAccess.Interfaces;
