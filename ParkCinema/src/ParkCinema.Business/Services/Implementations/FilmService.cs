@@ -60,11 +60,11 @@ public class FilmService : IFilmService
     //? Update and Delete images from container
 
 
-    public async Task<List<FilmDTO>> FindAllAsync()
+    public async Task<List<FilmDTO>> FindAllAsync(bool IsNew)
     {
 
         //! Take Join tables
-        var films = await _filmRepository.FindByCondition(con => con.IsNew != true)
+        var films = await _filmRepository.FindByCondition(con => con.IsNew == IsNew)
             .Include(fg => fg.Film_Genres).ThenInclude(g => g.Genre)
             .Include(fl => fl.Film_Languages).ThenInclude(fl => fl.Language)
             .Include(ff => ff.Film_Formats).ThenInclude(ff => ff.Format)
@@ -79,6 +79,7 @@ public class FilmService : IFilmService
     }
     public async Task CreateAsync(FilmCreateDTO filmCreateDTO)
     {
+      
         if (filmCreateDTO is null)
         {
             throw new NullReferenceException("Film is null");

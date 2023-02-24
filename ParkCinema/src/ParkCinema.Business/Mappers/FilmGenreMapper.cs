@@ -10,5 +10,6 @@ public class FilmGenreMapper : Profile
     public FilmGenreMapper()
     {
         CreateMap<Film_Genre,FilmGenreDTO >().ReverseMap();
+        CreateMap<FilmGenreUpdateDTO, Film_Genre>().ReverseMap(); 
     }
 }

@@ -4,7 +4,7 @@ namespace ParkCinema.Business.Services.Interfaces;
 
 public interface IFilmService
 {
-    Task<List<FilmDTO>> FindAllAsync();
+    Task<List<FilmDTO>> FindAllAsync(bool IsNew = false);
     Task CreateAsync(FilmCreateDTO filmDTO);
     Task<FilmDTO> FindByIdAsync(int id);
     Task DeleteAsync(int id);

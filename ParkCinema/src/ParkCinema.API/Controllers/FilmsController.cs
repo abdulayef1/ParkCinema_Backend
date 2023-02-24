@@ -20,9 +20,9 @@ public class FilmsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll(bool isNew=false)
     {
-        var films = await _filmService.FindAllAsync();
+        var films = await _filmService.FindAllAsync(isNew);
         return Ok(films);
     }
 

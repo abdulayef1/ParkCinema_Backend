@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using ParkCinema.Business.DTOs.Film;
 using ParkCinema.Business.DTOs.FilmGenre;
 using ParkCinema.Business.Services.Interfaces;
 using ParkCinema.Business.Utilities.Exceptions;
@@ -38,12 +37,13 @@ public class FilmGenreService : IFilmGenreService
         {
             var genre = await _genreService.FindByIdAsync(genre_ID);
             if (genre is null) throw new NotFoundException("Genre Not Found");
-            Film_Genre film_Genre = new Film_Genre {
-                Film_Id= filmGenreCreateDTO.Film_Id,
-                Genre_Id= genre_ID
+            Film_Genre film_Genre = new Film_Genre
+            {
+                Film_Id = filmGenreCreateDTO.Film_Id,
+                Genre_Id = genre_ID
             };
             var query = _film_GenreRepository.FindByCondition(con => con.Film_Id == filmGenreCreateDTO.Film_Id && con.Genre_Id == genre_ID);
-            if (query.ToList().Count!=0)
+            if (query.ToList().Count != 0)
             {
                 throw new BadRequestException("Film is exsist in this genre");
             }
@@ -59,7 +59,7 @@ public class FilmGenreService : IFilmGenreService
         if (Genres_Id is null) throw new NullReferenceException("Genres could not be null");
         var film = await _filmService.FindByIdAsync(film_Id);
         if (film is null) throw new NotFoundException("Film Not Found");
-    
+
 
         foreach (var genre_ID in Genres_Id)
         {
@@ -86,24 +86,26 @@ public class FilmGenreService : IFilmGenreService
         return filmGenreDTO;
     }
 
-    
+
     //? I WILL FIX
-    public async Task UpdateAsync(int film_Id, List<int> Genres_Id)
+    public async Task UpdateAsync(int film_Id, int genre_Id, FilmGenreUpdateDTO filmGenreUpdateDTO)
     {
-        if (Genres_Id is null) throw new NullReferenceException("Genres could not be null");
+        if (filmGenreUpdateDTO is null) throw new BadRequestException("Genres could not be null");
         var film = await _filmService.FindByIdAsync(film_Id);
         if (film is null) throw new NotFoundException("Film Not Found");
 
 
-        foreach (var genre_ID in Genres_Id)
-        {
-            var genre = await _genreService.FindByIdAsync(genre_ID);
-            if (genre is null) throw new NotFoundException("Genre Not Found");
+        var genre = await _genreService.FindByIdAsync(filmGenreUpdateDTO.Genre_Id);
+        if (genre is null) throw new NotFoundException("Genre Not Found");
 
-            var query = _film_GenreRepository.FindByCondition(con => con.Film_Id == film_Id);
-            var film_Genre = query.Single();
-            _film_GenreRepository.Update(film_Genre);
-        }
+        var film_Genres = _film_GenreRepository.FindByCondition(con => con.Film_Id == film_Id && con.Genre_Id == genre_Id);
+        if (film_Genres == null) throw new NotFoundException("Not found film in this genre");
+
+
+        var updatedFilm_Genre = _mapper.Map<Film_Genre>(filmGenreUpdateDTO);
+        
+        
+        _film_GenreRepository.Update(updatedFilm_Genre);
         await _film_GenreRepository.SaveChangesAsync();
 
 

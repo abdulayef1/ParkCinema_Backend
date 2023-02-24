@@ -40,11 +40,11 @@ public class FilmGenresController : ControllerBase
         return Ok();
     }
 
-    
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update( int film_Id, [FromBody] List<int> genres_Id)
+
+    [HttpPut("{filmId:int}/genres/{genreId:int}")]
+    public async Task<IActionResult> UpdateFilmGenre(int filmId, int genreId, [FromBody] FilmGenreUpdateDTO filmGenreupdataeDto)
     {
-        await _filmGenreService.UpdateAsync(film_Id, genres_Id);
+        await _filmGenreService.UpdateAsync(filmId, genreId, filmGenreupdataeDto);
         return Ok();
     }
 

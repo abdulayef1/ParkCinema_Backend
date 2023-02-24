@@ -20,6 +20,7 @@ public class AppDbContext : DbContext
     public DbSet<Film_Format> Film_Formats{ get; set; } = null!;
     public DbSet<Subtitle> Subtitles{ get; set; } = null!;
     public DbSet<Film_Subtitle> Film_Subtitles{ get; set; } = null!;
+    public DbSet<Cinema> Cinemas{ get; set; } = null!;
     
 
 
