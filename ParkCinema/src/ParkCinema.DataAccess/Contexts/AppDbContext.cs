@@ -22,6 +22,9 @@ public class AppDbContext : DbContext
     public DbSet<Film_Subtitle> Film_Subtitles{ get; set; } = null!;
     public DbSet<Cinema> Cinemas{ get; set; } = null!;
     public DbSet<Cinema_Image> Cinema_Images { get; set; } = null!;
+    public DbSet<Hall> Halls { get; set; } = null!;
+    public DbSet<SeatType> Types { get; set; } = null!;
+    public DbSet<Seat> Seats { get; set; } = null!;
     
 
 

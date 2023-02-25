@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ParkCinema.Core.Entities;
-using System.Reflection.Emit;
 
 namespace ParkCinema.DataAccess.Configurations;
 

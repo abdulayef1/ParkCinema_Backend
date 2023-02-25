@@ -18,5 +18,7 @@ public class Cinema : IEntity
     // Navigation property
     [NotMapped]
     public ICollection<Cinema_Image> Images { get; set; } = null!;
+    [NotMapped]
+    public ICollection<Hall> Halls { get; set; } = null!;
 
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParkCinema.DataAccess.Contexts;
 
@@ -11,9 +12,10 @@ using ParkCinema.DataAccess.Contexts;
 namespace ParkCinema.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230225013249_Halls")]
+    partial class Halls
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -312,56 +314,6 @@ namespace ParkCinema.DataAccess.Migrations
                     b.ToTable("Languages");
                 });
 
-            modelBuilder.Entity("ParkCinema.Core.Entities.Seat", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("Column")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Hall_ID")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsEmpty")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Row")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SeatType_ID")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Hall_ID");
-
-                    b.HasIndex("SeatType_ID");
-
-                    b.ToTable("Seats");
-                });
-
-            modelBuilder.Entity("ParkCinema.Core.Entities.SeatType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Types");
-                });
-
             modelBuilder.Entity("ParkCinema.Core.Entities.Subtitle", b =>
                 {
                     b.Property<int>("Id")
@@ -478,25 +430,6 @@ namespace ParkCinema.DataAccess.Migrations
                     b.Navigation("Cinema");
                 });
 
-            modelBuilder.Entity("ParkCinema.Core.Entities.Seat", b =>
-                {
-                    b.HasOne("ParkCinema.Core.Entities.Hall", "Hall")
-                        .WithMany("Seats")
-                        .HasForeignKey("Hall_ID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ParkCinema.Core.Entities.SeatType", "SeatType")
-                        .WithMany("Seats")
-                        .HasForeignKey("SeatType_ID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Hall");
-
-                    b.Navigation("SeatType");
-                });
-
             modelBuilder.Entity("ParkCinema.Core.Entities.Cinema", b =>
                 {
                     b.Navigation("Halls");
@@ -525,19 +458,9 @@ namespace ParkCinema.DataAccess.Migrations
                     b.Navigation("Film_Genres");
                 });
 
-            modelBuilder.Entity("ParkCinema.Core.Entities.Hall", b =>
-                {
-                    b.Navigation("Seats");
-                });
-
             modelBuilder.Entity("ParkCinema.Core.Entities.Language", b =>
                 {
                     b.Navigation("Film_Languages");
-                });
-
-            modelBuilder.Entity("ParkCinema.Core.Entities.SeatType", b =>
-                {
-                    b.Navigation("Seats");
                 });
 
             modelBuilder.Entity("ParkCinema.Core.Entities.Subtitle", b =>
