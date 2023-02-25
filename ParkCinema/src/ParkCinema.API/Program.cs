@@ -9,6 +9,7 @@ using ParkCinema.Business.Validators.Film;
 using ParkCinema.DataAccess;
 using ParkCinema.DataAccess.Contexts;
 using ParkCinema.Infrastructure;
+using ParkCinema.Infrastructure.Services.Payment.Stripe;
 using ParkCinema.Infrastructure.Services.Storage.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -38,6 +39,9 @@ builder.Services.AddInfrastructureServices();
 
 //Storage
 builder.Services.AddStorage<AzureStorage>();
+
+//Payment
+builder.Services.AddPayment<StripePayment>();
 
 //Services
 builder.Services.AddScoped<IFilmService,FilmService>();
