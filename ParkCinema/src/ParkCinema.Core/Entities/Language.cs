@@ -11,4 +11,6 @@ public class Language:IEntity
     //
     [NotMapped]
     public ICollection<Film_Language> Film_Languages { get; set; } = null!;
+    [NotMapped]
+    public ICollection<Session> Sessions { get; set; } = null!;
 }

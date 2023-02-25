@@ -9,6 +9,9 @@ namespace ParkCinema.Core.Entities
         public string? Name { get; set; }
 
         [NotMapped]
-        public ICollection<Film_Subtitle>? Film_Subtitles { get; set; }
+        public ICollection<Film_Subtitle> Film_Subtitles { get; set; } = null!;
+
+        [NotMapped]
+        public ICollection<Session> Sessions { get; set; } = null!;
     }
 }

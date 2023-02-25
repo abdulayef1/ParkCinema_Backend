@@ -15,10 +15,10 @@ public class FilmConfiguration : IEntityTypeConfiguration<Film>
             .HasMaxLength(100);
 
         builder.Property(p => p.AgeLimit)
-            .IsRequired();
+            .IsRequired(true);
 
         builder.Property(p => p.DurationMinute)
-          .IsRequired();
+          .IsRequired(true);
 
         builder.Property(p => p.Country)
            .IsRequired(true)

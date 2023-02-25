@@ -19,5 +19,7 @@ public class Hall : IEntity
 
     [NotMapped]
     public ICollection<Seat> Seats { get; set; } = null!;
+    [NotMapped]
+    public ICollection<Session> Sessions { get; set; } = null!;
 
 }

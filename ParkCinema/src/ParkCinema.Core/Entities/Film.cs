@@ -31,5 +31,7 @@ public class Film : IEntity
     public ICollection<Film_Format> Film_Formats { get; set; } = null!; 
     
     [NotMapped]
-    public ICollection<Film_Subtitle> Film_Subtitles { get; set; }=null!;
+    public ICollection<Film_Subtitle> Film_Subtitles { get; set; }=null!;    
+    [NotMapped]
+    public ICollection<Session> Sessions { get; set; }=null!;
 }

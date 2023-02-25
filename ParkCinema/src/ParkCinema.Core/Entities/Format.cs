@@ -10,5 +10,9 @@ public class Format : IEntity
 
 
     [NotMapped]
-    public ICollection<Film_Format>? Film_Formats { get; set; }
+    public ICollection<Film_Format> Film_Formats { get; set; } = null!;
+    [NotMapped]
+    public ICollection<Session> Sessions { get; set; } = null!;
+    
+
 }

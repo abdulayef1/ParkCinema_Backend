@@ -25,6 +25,7 @@ public class AppDbContext : DbContext
     public DbSet<Hall> Halls { get; set; } = null!;
     public DbSet<SeatType> Types { get; set; } = null!;
     public DbSet<Seat> Seats { get; set; } = null!;
+    public DbSet<Session> Sessions { get; set; } = null!;
     
 
 
