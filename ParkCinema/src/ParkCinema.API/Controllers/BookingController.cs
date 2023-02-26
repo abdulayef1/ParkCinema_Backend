@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ParkCinema.Application.Abstraction.Payment;
 using ParkCinema.Application.DTOs.Payment;
+using ParkCinema.Business.DTOs.Booking;
+using ParkCinema.Business.Services.Interfaces;
 
 namespace ParkCinema.API.Controllers
 {
@@ -8,32 +10,22 @@ namespace ParkCinema.API.Controllers
     [ApiController]
     public class BookingController : ControllerBase
     {
-        private readonly IPaymentService _paymentService;
+        private readonly IBookingService _bookingService;
 
-        public BookingController(IPaymentService paymentService)
+        public BookingController(IBookingService bookingService)
         {
-            _paymentService = paymentService;
+            _bookingService = bookingService;
         }
 
-        [HttpPost("customer")]
-        public async Task<ActionResult<CustomerResource>> CreateCustomer([FromBody] CreateCustomerResource resource,
-                                                                                    CancellationToken cancellationToken)
-        {
-            
-            
-            var response = await _paymentService.CreateCustomer(resource, cancellationToken);
-            
-            return Ok(response);
-        }
 
 
         [HttpPost("charge")]
-        public async Task<ActionResult<ChargeResource>> CreateCharge([FromBody] CreateChargeResource resource, 
-                                                                                CancellationToken cancellationToken)
+        public async Task<ActionResult<ChargeResource>> CreateCharge([FromBody] BookingDTO bookingDTO, 
+                                                                     CancellationToken cancellationToken)
         {
                 
-            var response = await _paymentService.CreateCharge(resource, cancellationToken);
-            return Ok(response);
+             await _bookingService.CreateCharge(bookingDTO, cancellationToken);
+            return Ok();
         }
 
 

@@ -50,6 +50,7 @@ builder.Services.AddScoped<ILanguageService, LanguageService>();
 builder.Services.AddScoped<ISubtitleService, SubtitleService>();
 builder.Services.AddScoped<IFormatService, FormatService>();
 builder.Services.AddScoped<IFilmGenreService, FilmGenreService>();
+builder.Services.AddScoped<IBookingService, BookingService>();
 
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>

@@ -2,7 +2,7 @@
 using ParkCinema.Application.Abstraction.Payment.Stripe;
 using ParkCinema.Application.DTOs.Payment;
 using Stripe;
-using Stripe.FinancialConnections;
+using System.Diagnostics.Contracts;
 
 namespace ParkCinema.Infrastructure.Services.Payment.Stripe;
 
@@ -12,7 +12,6 @@ public class StripePayment : IStripePayment
     private readonly TokenService _tokenService;
     private readonly CustomerService _customerService;
     private readonly ChargeService _chargeService;
-    private readonly PaymentIntentService _paymentIntentService;
 
 
     public StripePayment(
@@ -25,7 +24,7 @@ public class StripePayment : IStripePayment
         _tokenService = tokenService;
         _customerService = customerService;
         _chargeService = chargeService;
-        StripeConfiguration.ApiKey= configuration["Stripe:ApiKey"];
+        StripeConfiguration.ApiKey = configuration["Stripe:ApiKey"];
 
     }
 
@@ -45,13 +44,18 @@ public class StripePayment : IStripePayment
 
         var charge = await _chargeService.CreateAsync(chargeOptions, null, cancellationToken);
 
-        return new ChargeResource(
-            charge.Id,
-            charge.Currency,
-            charge.Amount,
-            charge.CustomerId,
-            charge.ReceiptEmail,
-            charge.Description);
+        if (charge.Status == "succeeded")
+        {
+            return new ChargeResource(
+                charge.Id,
+                charge.Currency,
+                charge.Amount,
+                charge.CustomerId,
+                charge.ReceiptEmail,
+                charge.Description);
+        }
+        throw new Exception("Failed payment");
+
     }
 
     public async Task<CustomerResource> CreateCustomer(CreateCustomerResource resource, CancellationToken cancellationToken)
@@ -78,34 +82,6 @@ public class StripePayment : IStripePayment
         var customer = await _customerService.CreateAsync(customerOptions, null, cancellationToken);
 
         return new CustomerResource(customer.Id, customer.Email, customer.Name);
-    }
-
-
-
-
-    public async Task<string> CreatePaymentIntent(int amount, string currency)
-    {
-
-
-        var options = new PaymentIntentCreateOptions
-        {
-            Amount = amount,
-            Currency = currency,
-
-        };
-        var service = new PaymentIntentService();
-        var paymentIntent = await service.CreateAsync(options);
-        return paymentIntent.Id;
-    }
-
-    public async Task<PaymentIntent> ConfirmPayment(string paymentIntentId)
-    {
-        var options = new PaymentIntentConfirmOptions
-        {
-            PaymentMethod = "pm_card_visa"
-        };
-        var paymentIntent = await _paymentIntentService.ConfirmAsync(paymentIntentId, options);
-        return paymentIntent;
     }
 
 
