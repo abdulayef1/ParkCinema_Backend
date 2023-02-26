@@ -1,4 +1,5 @@
 ﻿using ParkCinema.Application.Abstraction.Payment;
+using ParkCinema.Application.Abstraction.Services;
 using ParkCinema.Application.DTOs.Payment;
 using ParkCinema.Business.DTOs.Booking;
 using ParkCinema.Business.Services.Interfaces;
@@ -9,10 +10,13 @@ public class BookingService : IBookingService
 {
 
     private readonly IPaymentService _paymentService;
+    private readonly IMailService _mailService;
 
-    public BookingService(IPaymentService paymentService)
+    public BookingService(IPaymentService paymentService,
+                          IMailService mailService)
     {
         _paymentService = paymentService;
+        _mailService = mailService;
     }
 
 
@@ -50,7 +54,8 @@ public class BookingService : IBookingService
             filmName
             );
 
-         await _paymentService.CreateCharge(chargeResource, cancellationToken);
+        await _paymentService.CreateCharge(chargeResource, cancellationToken);
+        await _mailService.SendMailAsync(bookingDTO.ReceiptEmail, "ParkCinema","<strong>Ticket</strong>");
         return true;
     }
 

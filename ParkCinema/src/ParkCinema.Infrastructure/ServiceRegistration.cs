@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ParkCinema.Application.Abstraction.Payment;
+using ParkCinema.Application.Abstraction.Services;
 using ParkCinema.Application.Abstraction.Storage;
 using ParkCinema.Infrastructure.Services;
 using ParkCinema.Infrastructure.Services.Storage;
@@ -16,6 +17,7 @@ public static class ServiceRegistration
         services.AddScoped<TokenService>();
         services.AddScoped<CustomerService>();
         services.AddScoped<ChargeService>();
+        services.AddScoped<IMailService, MailService>();
     }
 
     //

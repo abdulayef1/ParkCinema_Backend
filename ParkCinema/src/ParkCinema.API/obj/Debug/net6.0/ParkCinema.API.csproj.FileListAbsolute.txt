@@ -122,3 +122,6 @@ C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\S
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\Stripe.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\ServiceStack.Text.dll
 C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\obj\Debug\net6.0\ParkCinema.API.MvcApplicationPartsAssemblyInfo.cs
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\MailKit.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\MimeKit.dll
+C:\WorkSpace\ParkCinema_Backend\ParkCinema\src\ParkCinema.API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
