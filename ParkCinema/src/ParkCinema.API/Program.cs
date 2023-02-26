@@ -1,11 +1,12 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ParkCinema.API.Extensions;
+using ParkCinema.Business;
 using ParkCinema.Business.DTOs.Film;
-using ParkCinema.Business.Services.Implementations;
-using ParkCinema.Business.Services.Interfaces;
 using ParkCinema.Business.Validators.Film;
+using ParkCinema.Core.Entities.Identity;
 using ParkCinema.DataAccess;
 using ParkCinema.DataAccess.Contexts;
 using ParkCinema.Infrastructure;
@@ -37,20 +38,37 @@ builder.Services.AddRepositoryServices();
 //Infrastructure
 builder.Services.AddInfrastructureServices();
 
+//Services
+builder.Services.AddBusinessServices();
+
 //Storage
 builder.Services.AddStorage<AzureStorage>();
 
 //Payment
 builder.Services.AddPayment<StripePayment>();
 
-//Services
-builder.Services.AddScoped<IFilmService,FilmService>();
-builder.Services.AddScoped<IGenreService, GenreService>();
-builder.Services.AddScoped<ILanguageService, LanguageService>();
-builder.Services.AddScoped<ISubtitleService, SubtitleService>();
-builder.Services.AddScoped<IFormatService, FormatService>();
-builder.Services.AddScoped<IFilmGenreService, FilmGenreService>();
-builder.Services.AddScoped<IBookingService, BookingService>();
+//Identity
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+{
+    options.Password.RequiredLength = 8;
+    options.Password.RequireDigit = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+
+    options.User.RequireUniqueEmail = true;
+
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(20);
+    options.Lockout.AllowedForNewUsers = true;
+
+}).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(opt =>
+{
+    opt.LoginPath = "/Auth/Login";
+});
+
 
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
@@ -69,12 +87,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-
-
-
-
-
-
 builder.Services.AddAutoMapper(typeof(FilmDTO).Assembly);
 
 
@@ -86,11 +98,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 //CORS
 app.UseCors();
+
 //Exception Handler
 app.ConfigureCustomExceptionMiddleware();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

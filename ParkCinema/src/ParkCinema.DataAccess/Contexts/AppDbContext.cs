@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ParkCinema.Core.Entities;
+using ParkCinema.Core.Entities.Identity;
 using ParkCinema.DataAccess.Configurations;
 
 namespace ParkCinema.DataAccess.Contexts;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<AppUser>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
@@ -37,6 +40,7 @@ public class AppDbContext : DbContext
 
         //!Apply all configurations in this assembyly 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(FilmConfiguration).Assembly);
+        base.OnModelCreating(modelBuilder);
 
 
     }

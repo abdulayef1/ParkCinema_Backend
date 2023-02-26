@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OX7/n3G9TjPO6W0gbAV4oe4CemMXhArYTCoucoB8QOBz8D9VBNkDl0caO4XkjxZwkD/cBRrdt51enxTis9EurQ==",
+  "dgSpecHash": "gpGCeIxdznhUiUZwZcVbBfHkLSMQMv/0nvmjlJyTLVxFEehCuuAGgBYRTmK2K6rn7SsVE064gqKqXJkqi/1SvQ==",
   "success": true,
   "projectFilePath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Business\\ParkCinema.Business.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,10 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.13\\microsoft.aspnetcore.cryptography.internal.6.0.13.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.13\\microsoft.aspnetcore.cryptography.keyderivation.6.0.13.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.13\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.13.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.13\\microsoft.aspnetcore.jsonpatch.6.0.13.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.13\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.13.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -25,6 +28,8 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.13\\microsoft.extensions.identity.core.6.0.13.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.13\\microsoft.extensions.identity.stores.6.0.13.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
