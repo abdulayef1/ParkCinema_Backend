@@ -1,3 +1,5 @@
+
+
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
@@ -47,6 +49,10 @@ builder.Services.AddStorage<AzureStorage>();
 //Payment
 builder.Services.AddPayment<StripePayment>();
 
+
+//DB initilaizer
+builder.Services.AddScoped<AppDbContextInitializer>();
+
 //Identity
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
@@ -87,6 +93,22 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+//AUTH
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("SuperAdminPolicy", policy =>
+        policy.RequireRole("SuperAdmin"));
+
+    options.AddPolicy("AdminPolicy", policy =>
+        policy.RequireRole("SuperAdmin", "Admin"));
+
+    options.AddPolicy("ModeratorPolicy", policy =>
+        policy.RequireRole("SuperAdmin", "Admin", "Moderator"));
+});
+
+
+//AUTO MAPPER
 builder.Services.AddAutoMapper(typeof(FilmDTO).Assembly);
 
 
@@ -102,6 +124,14 @@ if (app.Environment.IsDevelopment())
 //CORS
 app.UseCors();
 
+//DB initilazier
+//using (var scope = app.Services.CreateAsyncScope())
+//{
+//    var init = scope.ServiceProvider.GetRequiredService<AppDbContextInitializer>();
+//    await init.UserSeedAsync();
+//}
+
+
 //Exception Handler
 app.ConfigureCustomExceptionMiddleware();
 
@@ -110,6 +140,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.Run(); 
 
 

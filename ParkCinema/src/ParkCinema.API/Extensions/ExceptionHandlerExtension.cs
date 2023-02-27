@@ -1,10 +1,4 @@
-﻿
-
-using Microsoft.AspNetCore.Diagnostics;
-using ParkCinema.API.Middlewares.CustomExceptionMiddleware;
-using System.Net;
-using System.Net.Mime;
-using System.Text.Json;
+﻿using ParkCinema.API.Middlewares.CustomExceptionMiddleware;
 
 namespace ParkCinema.API.Extensions;
 

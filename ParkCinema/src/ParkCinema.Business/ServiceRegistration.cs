@@ -15,6 +15,8 @@ public static class ServiceRegistration
         services.AddScoped<IFormatService, FormatService>();
         services.AddScoped<IFilmGenreService, FilmGenreService>();
         services.AddScoped<IBookingService, BookingService>();
+        services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IAuthService, AuthService>();
     }
 
 }
