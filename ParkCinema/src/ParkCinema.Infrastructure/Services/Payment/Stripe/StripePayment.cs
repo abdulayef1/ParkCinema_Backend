@@ -2,7 +2,6 @@
 using ParkCinema.Application.Abstraction.Payment.Stripe;
 using ParkCinema.Application.DTOs.Payment;
 using Stripe;
-using System.Diagnostics.Contracts;
 
 namespace ParkCinema.Infrastructure.Services.Payment.Stripe;
 
@@ -10,7 +9,7 @@ public class StripePayment : IStripePayment
 {
 
     private readonly TokenService _tokenService;
-    private readonly CustomerService _customerService;
+    private readonly CustomerService _customerService; 
     private readonly ChargeService _chargeService;
 
 

@@ -6,6 +6,7 @@ public class Session : IEntity
 {
     public int Id { get ; set; }
     public DateTime StartTime { get; set; }
+    public int Price { get; set; }
 
 
     public int Hall_Id { get; set; }

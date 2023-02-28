@@ -58,5 +58,5 @@ public class BookingService : IBookingService
         await _mailService.SendMailAsync(bookingDTO.ReceiptEmail, "ParkCinema","<strong>Ticket</strong>");
         return true;
     }
-
+     
 }

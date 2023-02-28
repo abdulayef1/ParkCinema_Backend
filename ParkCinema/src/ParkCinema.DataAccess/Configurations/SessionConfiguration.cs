@@ -33,6 +33,9 @@ public class SessionConfiguration : IEntityTypeConfiguration<Session>
         builder.Property(p => p.StartTime)
                .IsRequired(true);
 
+        builder.Property(p => p.Price)
+               .IsRequired(true);
+
 
     }
 }

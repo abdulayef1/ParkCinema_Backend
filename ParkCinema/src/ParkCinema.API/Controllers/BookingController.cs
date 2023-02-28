@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ParkCinema.Application.Abstraction.Payment;
 using ParkCinema.Application.DTOs.Payment;
 using ParkCinema.Business.DTOs.Booking;
 using ParkCinema.Business.Services.Interfaces;
@@ -19,7 +18,7 @@ namespace ParkCinema.API.Controllers
 
 
 
-        [HttpPost("charge")]
+        [HttpPost("Charge")]
         public async Task<ActionResult<ChargeResource>> CreateCharge([FromBody] BookingDTO bookingDTO, 
                                                                      CancellationToken cancellationToken)
         {
