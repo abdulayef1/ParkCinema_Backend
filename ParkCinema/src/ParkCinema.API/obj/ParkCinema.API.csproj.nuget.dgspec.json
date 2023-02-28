@@ -426,6 +426,10 @@
               "target": "Package",
               "version": "[3.5.0, )"
             },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.3, )"
+            },
             "ServiceStack.Stripe": {
               "target": "Package",
               "version": "[6.6.0, )"

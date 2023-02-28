@@ -18,6 +18,7 @@ public static class ServiceRegistration
         services.AddScoped<CustomerService>();
         services.AddScoped<ChargeService>();
         services.AddScoped<IMailService, MailService>();
+        services.AddScoped<IQRCodeService,QRCodeService>();
     }
 
     //

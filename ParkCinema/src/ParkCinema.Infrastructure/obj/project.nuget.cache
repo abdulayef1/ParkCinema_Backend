@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hh8yJReEB78L3SVzBRGaOwumEDRDPxGnx9aCjuP3yJTuUAaxJRw1iKg/EbHhUE83Iic/Wsg5mlnBstrnbpQKqA==",
+  "dgSpecHash": "t39en1qwKTtbZUQB1Kb8bDm3ZVhIXJWAdNkd8UKt0ocIUAjTIFrRFZtVVW2RIv7henkQKHy7unNQZExAqWbT9A==",
   "success": true,
   "projectFilePath": "C:\\WorkSpace\\ParkCinema_Backend\\ParkCinema\\src\\ParkCinema.Infrastructure\\ParkCinema.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\mimekit\\3.5.0\\mimekit.3.5.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\qrcoder\\1.4.3\\qrcoder.1.4.3.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\servicestack.client\\6.6.0\\servicestack.client.6.6.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\servicestack.interfaces\\6.6.0\\servicestack.interfaces.6.6.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\servicestack.stripe\\6.6.0\\servicestack.stripe.6.6.0.nupkg.sha512",
