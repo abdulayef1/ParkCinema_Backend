@@ -29,6 +29,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
     public DbSet<SeatType> Types { get; set; } = null!;
     public DbSet<Seat> Seats { get; set; } = null!;
     public DbSet<Session> Sessions { get; set; } = null!;
+    public DbSet<Subscriber> Subscribers { get; set; } = null!;
     
 
 

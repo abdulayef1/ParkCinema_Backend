@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ParkCinema.Business.DTOs.AppUser;
 using ParkCinema.Business.Services.Interfaces;
 using ParkCinema.Core.Enums;
@@ -21,7 +22,7 @@ public class UserController : ControllerBase
 
 
     [HttpPost("moderator")]
-   // [Authorize(Policy = "AdminPolicy")]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task <IActionResult> AddModerator(UserCreateDTO userCreateDTO)
     {
         
@@ -30,7 +31,7 @@ public class UserController : ControllerBase
     }
     
     [HttpPost("admin")]
-   // [Authorize(Policy = "SuperAdminPolicy")]
+    [Authorize(Policy = "SuperAdminPolicy")]
     public async Task< IActionResult> AddAdmin(UserCreateDTO userCreateDTO)
     {
         
