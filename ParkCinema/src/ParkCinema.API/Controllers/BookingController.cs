@@ -17,14 +17,14 @@ namespace ParkCinema.API.Controllers
         }
 
 
-
+         
         [HttpPost("Charge")]
         public async Task<ActionResult<ChargeResource>> CreateCharge([FromBody] BookingDTO bookingDTO, 
                                                                      CancellationToken cancellationToken)
         {
                 
-             await _bookingService.CreateCharge(bookingDTO, cancellationToken);
-            return Ok();
+           var responseQR=  await _bookingService.CreateCharge(bookingDTO, cancellationToken);
+            return File(responseQR, "image/png");
         }
 
 

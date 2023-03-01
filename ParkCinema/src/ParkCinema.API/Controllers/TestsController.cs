@@ -9,7 +9,7 @@ using System.Text.Json;
 namespace ParkCinema.API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController] 
     public class TestsController : ControllerBase
     {
         private readonly IQRCodeService _qRCodeService;

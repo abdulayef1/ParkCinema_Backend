@@ -1,9 +1,11 @@
-﻿using AutoMapper.Configuration.Conventions;
+﻿using Microsoft.AspNetCore.Hosting;
 using ParkCinema.Application.Abstraction.Payment;
 using ParkCinema.Application.Abstraction.Services;
 using ParkCinema.Application.DTOs.Payment;
+using ParkCinema.Business.DTOs;
 using ParkCinema.Business.DTOs.Booking;
 using ParkCinema.Business.Services.Interfaces;
+using System.Text.Json;
 
 namespace ParkCinema.Business.Services.Implementations;
 
@@ -12,21 +14,24 @@ public class BookingService : IBookingService
 
     private readonly IPaymentService _paymentService;
     private readonly IMailService _mailService;
-
-    public BookingService(IPaymentService paymentService,
-                          IMailService mailService)
+    private readonly IWebHostEnvironment _hostEnvironment;
+    private readonly IQRCodeService _qRCodeService;
+    public BookingService(IPaymentService paymentService, 
+        IMailService mailService,
+        IWebHostEnvironment hostEnvironment, 
+        IQRCodeService qRCodeService)
     {
         _paymentService = paymentService;
         _mailService = mailService;
+        _hostEnvironment = hostEnvironment;
+        _qRCodeService= qRCodeService;
     }
 
-    public async Task<bool> CreateBooking(int sessionID,List <int> seatID, CancellationToken cancellationToken)
+    public async Task<byte[]> CreateCharge(BookingDTO bookingDTO, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
-    }
+        //I MUST TAKE SESSION ID AND SEAT IDS THEN I SHOUD CHARGE THIS PARAMETRS AND I SHOULD CHANGE THE STATUS OF SEAT
+        //I DONT HAVE ENOUGH TIME THAT IS WHY I KEEP SIMPLE AFTER FIXE THE SESSION SERVICE I CAN USE THIS LIKE THAT
 
-    public async Task<bool> CreateCharge(BookingDTO bookingDTO, CancellationToken cancellationToken)
-    {
 
         CreateCardResource cardResource = new CreateCardResource
         (
@@ -58,9 +63,44 @@ public class BookingService : IBookingService
             filmName
             );
 
-        await _paymentService.CreateCharge(chargeResource, cancellationToken);
-        await _mailService.SendMailAsync(bookingDTO.ReceiptEmail, "ParkCinema", "<strong>Ticket</strong>");
-        return true;
+       var chardData= await _paymentService.CreateCharge(chargeResource, cancellationToken);
+
+        var ticketViewModel = new TicketViewModel
+        {
+            HallName = "Hall 1",
+            Film = "Avatar",
+            Row = 3,
+            Column = 2,
+            Price = totalAmount
+        };
+
+     
+       
+ 
+
+
+    //
+
+    var webRoot = _hostEnvironment.WebRootPath;
+        var htmlPath = Path.Combine(webRoot, "assets", "ticket.html");
+        var htmlContent = File.ReadAllText(htmlPath);
+
+        // Replace placeholders with actual values
+        htmlContent = htmlContent.Replace("{{Standard Hall}}", "Zal 1");
+
+
+
+        var htmlbody = htmlContent;
+        await _mailService.SendMailAsync(bookingDTO.ReceiptEmail, "ParkCinema", htmlbody);
+
+
+        var responseQR = new { Id= chardData.ChargeId, Costumer_ID = chardData, film=filmName};
+        string json = JsonSerializer.Serialize(responseQR);
+        var res = _qRCodeService.GenerateQRCode(json);
+
+
+
+        return res;
     }
 
 }

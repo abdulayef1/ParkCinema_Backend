@@ -21,6 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+// Fuluent validation
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssembly(typeof(FilmCreateDTO_Validator).Assembly);
@@ -48,6 +49,7 @@ builder.Services.AddStorage<AzureStorage>();
 
 //Payment
 builder.Services.AddPayment<StripePayment>();
+
 
 
 //DB initilaizer
