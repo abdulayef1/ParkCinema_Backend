@@ -17,6 +17,9 @@ public static class ServiceRegistration
         services.AddScoped<IBookingService, BookingService>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<IHallService, HallService>();
+        services.AddScoped<ISessionService, SessionService>();
+
     }
 
 }

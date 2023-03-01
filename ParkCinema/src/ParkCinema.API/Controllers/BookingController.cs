@@ -2,7 +2,7 @@
 using ParkCinema.Application.DTOs.Payment;
 using ParkCinema.Business.DTOs.Booking;
 using ParkCinema.Business.Services.Interfaces;
-
+ 
 namespace ParkCinema.API.Controllers
 {
     [Route("api/[controller]")]
@@ -13,7 +13,7 @@ namespace ParkCinema.API.Controllers
 
         public BookingController(IBookingService bookingService)
         {
-            _bookingService = bookingService;
+            _bookingService = bookingService; 
         }
 
 

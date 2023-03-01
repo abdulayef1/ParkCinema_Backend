@@ -1,4 +1,5 @@
-﻿using ParkCinema.Application.Abstraction.Payment;
+﻿using AutoMapper.Configuration.Conventions;
+using ParkCinema.Application.Abstraction.Payment;
 using ParkCinema.Application.Abstraction.Services;
 using ParkCinema.Application.DTOs.Payment;
 using ParkCinema.Business.DTOs.Booking;
@@ -19,11 +20,14 @@ public class BookingService : IBookingService
         _mailService = mailService;
     }
 
-
+    public async Task<bool> CreateBooking(int sessionID,List <int> seatID, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
 
     public async Task<bool> CreateCharge(BookingDTO bookingDTO, CancellationToken cancellationToken)
     {
-               
+
         CreateCardResource cardResource = new CreateCardResource
         (
              bookingDTO.Name,
@@ -41,7 +45,7 @@ public class BookingService : IBookingService
         );
 
 
-         var response=await _paymentService.CreateCustomer(customerResource, cancellationToken);
+        var response = await _paymentService.CreateCustomer(customerResource, cancellationToken);
 
         long totalAmount = 10;
         string filmName = "Avatar";
@@ -55,8 +59,8 @@ public class BookingService : IBookingService
             );
 
         await _paymentService.CreateCharge(chargeResource, cancellationToken);
-        await _mailService.SendMailAsync(bookingDTO.ReceiptEmail, "ParkCinema","<strong>Ticket</strong>");
+        await _mailService.SendMailAsync(bookingDTO.ReceiptEmail, "ParkCinema", "<strong>Ticket</strong>");
         return true;
     }
-     
+
 }
